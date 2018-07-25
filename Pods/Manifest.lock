@@ -1,0 +1,16 @@
+PODS:
+  - SwiftIconFont (2.7.3)
+
+DEPENDENCIES:
+  - SwiftIconFont
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - SwiftIconFont
+
+SPEC CHECKSUMS:
+  SwiftIconFont: ebd8ee931a1e7072b61a87aec53f3a0786ef7f2b
+
+PODFILE CHECKSUM: 65bbdfacca14be93082cd226b0ee252252954394
+
+COCOAPODS: 1.5.3

@@ -7,6 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A79D227210450E3001DFC1A /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A79D226210450E3001DFC1A /* HomeVC.swift */; };
+		0A79D22921045669001DFC1A /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A79D22821045669001DFC1A /* SettingsVC.swift */; };
+		0A79D22B21046736001DFC1A /* PageRedirectHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A79D22A21046736001DFC1A /* PageRedirectHelper.swift */; };
+		0A79D22D21047059001DFC1A /* CSSHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A79D22C21047059001DFC1A /* CSSHelper.swift */; };
+		0A79D22F2104754B001DFC1A /* SettingsDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A79D22E2104754B001DFC1A /* SettingsDataHelper.swift */; };
+		0A79D2352104B383001DFC1A /* EListTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A79D2332104B383001DFC1A /* EListTVC.swift */; };
+		0A79D2362104B383001DFC1A /* EListTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A79D2342104B383001DFC1A /* EListTVC.xib */; };
+		0A79D2382104E1E9001DFC1A /* ElistVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A79D2372104E1E9001DFC1A /* ElistVC.swift */; };
+		0A79D23A2104F1B8001DFC1A /* AddUserView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A79D2392104F1B8001DFC1A /* AddUserView.xib */; };
+		0A79D23C2104F1CD001DFC1A /* AddUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A79D23B2104F1CD001DFC1A /* AddUserView.swift */; };
+		0A79D23E21062C81001DFC1A /* AddCelebVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A79D23D21062C81001DFC1A /* AddCelebVIew.swift */; };
+		0A79D24021062CAD001DFC1A /* AddCelebView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A79D23F21062CAD001DFC1A /* AddCelebView.xib */; };
+		0A79D24221062F1D001DFC1A /* CelebDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A79D24121062F1D001DFC1A /* CelebDataHelper.swift */; };
+		0A79D2442106879D001DFC1A /* GameBoardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A79D2432106879D001DFC1A /* GameBoardVC.swift */; };
 		0AB46EBE21026EC50092BFE1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB46EBD21026EC50092BFE1 /* AppDelegate.swift */; };
 		0AB46EC021026EC50092BFE1 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 0AB46EBF21026EC50092BFE1 /* GameScene.sks */; };
 		0AB46EC221026EC50092BFE1 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 0AB46EC121026EC50092BFE1 /* Actions.sks */; };
@@ -15,9 +29,30 @@
 		0AB46EC921026EC50092BFE1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0AB46EC721026EC50092BFE1 /* Main.storyboard */; };
 		0AB46ECB21026ED10092BFE1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0AB46ECA21026ED10092BFE1 /* Assets.xcassets */; };
 		0AB46ECE21026ED10092BFE1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0AB46ECC21026ED10092BFE1 /* LaunchScreen.storyboard */; };
+		0AB46ED721033FC60092BFE1 /* CoreDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0AB46ED521033FC60092BFE1 /* CoreDataModel.xcdatamodeld */; };
+		0AB46EDA210342B40092BFE1 /* UserDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB46ED9210342B40092BFE1 /* UserDataHelper.swift */; };
+		0AB46EDC2103431D0092BFE1 /* DataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB46EDB2103431D0092BFE1 /* DataHelper.swift */; };
+		0AB46EDF210346290092BFE1 /* UtilityHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB46EDE210346290092BFE1 /* UtilityHelper.swift */; };
+		0AB46EE421038FCC0092BFE1 /* TeamDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB46EE321038FCC0092BFE1 /* TeamDataHelper.swift */; };
+		32D37B3C09491C843A1BE3A8 /* Pods_Celebrity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D491A1CDBB844C38FECAB117 /* Pods_Celebrity.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		06602634341EF375C5341D52 /* Pods-Celebrity.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Celebrity.release.xcconfig"; path = "Pods/Target Support Files/Pods-Celebrity/Pods-Celebrity.release.xcconfig"; sourceTree = "<group>"; };
+		0A79D226210450E3001DFC1A /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
+		0A79D22821045669001DFC1A /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
+		0A79D22A21046736001DFC1A /* PageRedirectHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageRedirectHelper.swift; sourceTree = "<group>"; };
+		0A79D22C21047059001DFC1A /* CSSHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSSHelper.swift; sourceTree = "<group>"; };
+		0A79D22E2104754B001DFC1A /* SettingsDataHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsDataHelper.swift; sourceTree = "<group>"; };
+		0A79D2332104B383001DFC1A /* EListTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EListTVC.swift; sourceTree = "<group>"; };
+		0A79D2342104B383001DFC1A /* EListTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EListTVC.xib; sourceTree = "<group>"; };
+		0A79D2372104E1E9001DFC1A /* ElistVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElistVC.swift; sourceTree = "<group>"; };
+		0A79D2392104F1B8001DFC1A /* AddUserView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddUserView.xib; sourceTree = "<group>"; };
+		0A79D23B2104F1CD001DFC1A /* AddUserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddUserView.swift; sourceTree = "<group>"; };
+		0A79D23D21062C81001DFC1A /* AddCelebVIew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCelebVIew.swift; sourceTree = "<group>"; };
+		0A79D23F21062CAD001DFC1A /* AddCelebView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddCelebView.xib; sourceTree = "<group>"; };
+		0A79D24121062F1D001DFC1A /* CelebDataHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CelebDataHelper.swift; sourceTree = "<group>"; };
+		0A79D2432106879D001DFC1A /* GameBoardVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameBoardVC.swift; sourceTree = "<group>"; };
 		0AB46EBA21026EC50092BFE1 /* Celebrity.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Celebrity.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0AB46EBD21026EC50092BFE1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0AB46EBF21026EC50092BFE1 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -28,6 +63,13 @@
 		0AB46ECA21026ED10092BFE1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0AB46ECD21026ED10092BFE1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0AB46ECF21026ED10092BFE1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0AB46ED621033FC60092BFE1 /* CoreDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataModel.xcdatamodel; sourceTree = "<group>"; };
+		0AB46ED9210342B40092BFE1 /* UserDataHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataHelper.swift; sourceTree = "<group>"; };
+		0AB46EDB2103431D0092BFE1 /* DataHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataHelper.swift; sourceTree = "<group>"; };
+		0AB46EDE210346290092BFE1 /* UtilityHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilityHelper.swift; sourceTree = "<group>"; };
+		0AB46EE321038FCC0092BFE1 /* TeamDataHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamDataHelper.swift; sourceTree = "<group>"; };
+		76FD448058C6A83332B06706 /* Pods-Celebrity.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Celebrity.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Celebrity/Pods-Celebrity.debug.xcconfig"; sourceTree = "<group>"; };
+		D491A1CDBB844C38FECAB117 /* Pods_Celebrity.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Celebrity.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,17 +77,95 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				32D37B3C09491C843A1BE3A8 /* Pods_Celebrity.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0A79D22021044EEE001DFC1A /* GameBoardVC */ = {
+			isa = PBXGroup;
+			children = (
+				0A79D2432106879D001DFC1A /* GameBoardVC.swift */,
+			);
+			path = GameBoardVC;
+			sourceTree = "<group>";
+		};
+		0A79D22121044EEE001DFC1A /* GameReviewVC */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = GameReviewVC;
+			sourceTree = "<group>";
+		};
+		0A79D22221044EEE001DFC1A /* SettingsVC */ = {
+			isa = PBXGroup;
+			children = (
+				0A79D22821045669001DFC1A /* SettingsVC.swift */,
+			);
+			path = SettingsVC;
+			sourceTree = "<group>";
+		};
+		0A79D22321044EEE001DFC1A /* InstructionsVC */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = InstructionsVC;
+			sourceTree = "<group>";
+		};
+		0A79D22421044EEE001DFC1A /* HomeVC */ = {
+			isa = PBXGroup;
+			children = (
+				0A79D226210450E3001DFC1A /* HomeVC.swift */,
+			);
+			path = HomeVC;
+			sourceTree = "<group>";
+		};
+		0A79D22521044EEE001DFC1A /* EListVC */ = {
+			isa = PBXGroup;
+			children = (
+				0A79D2372104E1E9001DFC1A /* ElistVC.swift */,
+			);
+			path = EListVC;
+			sourceTree = "<group>";
+		};
+		0A79D2302104B347001DFC1A /* UIViews */ = {
+			isa = PBXGroup;
+			children = (
+				0A79D2312104B347001DFC1A /* Cells */,
+				0A79D2322104B347001DFC1A /* Subviews */,
+			);
+			path = UIViews;
+			sourceTree = "<group>";
+		};
+		0A79D2312104B347001DFC1A /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				0A79D2332104B383001DFC1A /* EListTVC.swift */,
+				0A79D2342104B383001DFC1A /* EListTVC.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		0A79D2322104B347001DFC1A /* Subviews */ = {
+			isa = PBXGroup;
+			children = (
+				0A79D2392104F1B8001DFC1A /* AddUserView.xib */,
+				0A79D23B2104F1CD001DFC1A /* AddUserView.swift */,
+				0A79D23F21062CAD001DFC1A /* AddCelebView.xib */,
+				0A79D23D21062C81001DFC1A /* AddCelebVIew.swift */,
+			);
+			path = Subviews;
+			sourceTree = "<group>";
+		};
 		0AB46EB121026EC50092BFE1 = {
 			isa = PBXGroup;
 			children = (
 				0AB46EBC21026EC50092BFE1 /* Celebrity */,
 				0AB46EBB21026EC50092BFE1 /* Products */,
+				C3EAF7D003913FBFBB58314C /* Pods */,
+				E7F6D1437D5C0C98428807D0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -60,6 +180,10 @@
 		0AB46EBC21026EC50092BFE1 /* Celebrity */ = {
 			isa = PBXGroup;
 			children = (
+				0A79D2302104B347001DFC1A /* UIViews */,
+				0AB46EE0210353C00092BFE1 /* ViewControllers */,
+				0AB46EDD210346180092BFE1 /* Helpers */,
+				0AB46ED82103429E0092BFE1 /* CoreDataHelpers */,
 				0AB46EBD21026EC50092BFE1 /* AppDelegate.swift */,
 				0AB46EBF21026EC50092BFE1 /* GameScene.sks */,
 				0AB46EC121026EC50092BFE1 /* Actions.sks */,
@@ -69,8 +193,61 @@
 				0AB46ECA21026ED10092BFE1 /* Assets.xcassets */,
 				0AB46ECC21026ED10092BFE1 /* LaunchScreen.storyboard */,
 				0AB46ECF21026ED10092BFE1 /* Info.plist */,
+				0AB46ED521033FC60092BFE1 /* CoreDataModel.xcdatamodeld */,
 			);
 			path = Celebrity;
+			sourceTree = "<group>";
+		};
+		0AB46ED82103429E0092BFE1 /* CoreDataHelpers */ = {
+			isa = PBXGroup;
+			children = (
+				0A79D22E2104754B001DFC1A /* SettingsDataHelper.swift */,
+				0AB46EE321038FCC0092BFE1 /* TeamDataHelper.swift */,
+				0AB46ED9210342B40092BFE1 /* UserDataHelper.swift */,
+				0A79D24121062F1D001DFC1A /* CelebDataHelper.swift */,
+				0AB46EDB2103431D0092BFE1 /* DataHelper.swift */,
+			);
+			path = CoreDataHelpers;
+			sourceTree = "<group>";
+		};
+		0AB46EDD210346180092BFE1 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				0AB46EDE210346290092BFE1 /* UtilityHelper.swift */,
+				0A79D22A21046736001DFC1A /* PageRedirectHelper.swift */,
+				0A79D22C21047059001DFC1A /* CSSHelper.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		0AB46EE0210353C00092BFE1 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				0A79D22521044EEE001DFC1A /* EListVC */,
+				0A79D22021044EEE001DFC1A /* GameBoardVC */,
+				0A79D22121044EEE001DFC1A /* GameReviewVC */,
+				0A79D22421044EEE001DFC1A /* HomeVC */,
+				0A79D22321044EEE001DFC1A /* InstructionsVC */,
+				0A79D22221044EEE001DFC1A /* SettingsVC */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		C3EAF7D003913FBFBB58314C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				76FD448058C6A83332B06706 /* Pods-Celebrity.debug.xcconfig */,
+				06602634341EF375C5341D52 /* Pods-Celebrity.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		E7F6D1437D5C0C98428807D0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D491A1CDBB844C38FECAB117 /* Pods_Celebrity.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -80,9 +257,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0AB46ED221026ED10092BFE1 /* Build configuration list for PBXNativeTarget "Celebrity" */;
 			buildPhases = (
+				A11D20B0CF723FCC704180BB /* [CP] Check Pods Manifest.lock */,
 				0AB46EB621026EC50092BFE1 /* Sources */,
 				0AB46EB721026EC50092BFE1 /* Frameworks */,
 				0AB46EB821026EC50092BFE1 /* Resources */,
+				CCE2B5CC5C337F5D0641676F /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -131,24 +310,82 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0A79D24021062CAD001DFC1A /* AddCelebView.xib in Resources */,
 				0AB46EC921026EC50092BFE1 /* Main.storyboard in Resources */,
 				0AB46EC021026EC50092BFE1 /* GameScene.sks in Resources */,
 				0AB46ECB21026ED10092BFE1 /* Assets.xcassets in Resources */,
+				0A79D23A2104F1B8001DFC1A /* AddUserView.xib in Resources */,
 				0AB46ECE21026ED10092BFE1 /* LaunchScreen.storyboard in Resources */,
 				0AB46EC221026EC50092BFE1 /* Actions.sks in Resources */,
+				0A79D2362104B383001DFC1A /* EListTVC.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		A11D20B0CF723FCC704180BB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Celebrity-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CCE2B5CC5C337F5D0641676F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Celebrity/Pods-Celebrity-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/SwiftIconFont/SwiftIconFont.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftIconFont.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Celebrity/Pods-Celebrity-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		0AB46EB621026EC50092BFE1 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0AB46EDF210346290092BFE1 /* UtilityHelper.swift in Sources */,
+				0A79D22F2104754B001DFC1A /* SettingsDataHelper.swift in Sources */,
 				0AB46EC421026EC50092BFE1 /* GameScene.swift in Sources */,
+				0A79D2442106879D001DFC1A /* GameBoardVC.swift in Sources */,
+				0AB46EDA210342B40092BFE1 /* UserDataHelper.swift in Sources */,
+				0A79D227210450E3001DFC1A /* HomeVC.swift in Sources */,
+				0A79D2382104E1E9001DFC1A /* ElistVC.swift in Sources */,
 				0AB46EC621026EC50092BFE1 /* GameViewController.swift in Sources */,
+				0A79D24221062F1D001DFC1A /* CelebDataHelper.swift in Sources */,
+				0AB46EDC2103431D0092BFE1 /* DataHelper.swift in Sources */,
+				0AB46ED721033FC60092BFE1 /* CoreDataModel.xcdatamodeld in Sources */,
+				0AB46EE421038FCC0092BFE1 /* TeamDataHelper.swift in Sources */,
+				0A79D2352104B383001DFC1A /* EListTVC.swift in Sources */,
 				0AB46EBE21026EC50092BFE1 /* AppDelegate.swift in Sources */,
+				0A79D22B21046736001DFC1A /* PageRedirectHelper.swift in Sources */,
+				0A79D23E21062C81001DFC1A /* AddCelebVIew.swift in Sources */,
+				0A79D22921045669001DFC1A /* SettingsVC.swift in Sources */,
+				0A79D22D21047059001DFC1A /* CSSHelper.swift in Sources */,
+				0A79D23C2104F1CD001DFC1A /* AddUserView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -290,6 +527,7 @@
 		};
 		0AB46ED321026ED10092BFE1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 76FD448058C6A83332B06706 /* Pods-Celebrity.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -307,6 +545,7 @@
 		};
 		0AB46ED421026ED10092BFE1 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 06602634341EF375C5341D52 /* Pods-Celebrity.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -344,6 +583,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		0AB46ED521033FC60092BFE1 /* CoreDataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				0AB46ED621033FC60092BFE1 /* CoreDataModel.xcdatamodel */,
+			);
+			currentVersion = 0AB46ED621033FC60092BFE1 /* CoreDataModel.xcdatamodel */;
+			path = CoreDataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 0AB46EB221026EC50092BFE1 /* Project object */;
 }
