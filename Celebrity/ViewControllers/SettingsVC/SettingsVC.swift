@@ -15,10 +15,12 @@ class SettingsVC: UIViewController{
     var teamCount: Int = 2;
     var roundCount: Int = 2;
     var timeInSec: Int = 60;
+    var allowDuplic: Bool = false;
     
     @IBOutlet weak var lblTeam: UILabel!
     @IBOutlet weak var lblTime: UILabel!
     @IBOutlet weak var lblRound: UILabel!
+    @IBOutlet weak var sagments: UISegmentedControl!
     
     //
     override func viewDidLoad() {
@@ -27,12 +29,12 @@ class SettingsVC: UIViewController{
             self.teamCount = Int(data.teamCount);
             self.timeInSec = Int(data.timeInSec);
             self.roundCount = Int(data.roundCount);
+            self.allowDuplic = Bool(data.allowDuplicate);
             
             self.lblTeam.text = "Number Of Teams - \(self.teamCount)";
-            self.lblTime.text = "Turn Time - \(secIntoFormat(self.timeInSec)) minute";
+            self.lblTime.text = "Turn Time - \(UtilityHelper.secIntoFormat(self.timeInSec)) minute";
             self.lblRound.text = "Number Of Round - \(self.roundCount)";
-            
-            
+            sagments.selectedSegmentIndex = (self.allowDuplic) ? 0 : 1;
             
         }
         
@@ -54,7 +56,7 @@ class SettingsVC: UIViewController{
         //
         let c = Int(sender.value);
         self.timeInSec = c;
-        self.lblTime.text = "Turn Time - \(secIntoFormat(self.timeInSec)) minute";
+        self.lblTime.text = "Turn Time - \(UtilityHelper.secIntoFormat(self.timeInSec)) minute";
         
         setSettings()
         
@@ -70,28 +72,33 @@ class SettingsVC: UIViewController{
         
     }
     
+    @IBAction func allowDuplicate(_ sender: UISwitch) {
+        //
+        
+        
+    }
+    
+    @IBAction func allowDuplicates(_ sender: UISegmentedControl) {
+        
+        
+        
+        let c = (sender.selectedSegmentIndex == 0) ? true : false;
+        self.allowDuplic = c;
+        
+        setSettings();
+        
+    }
+    
+    
     private func setSettings(){
-        SettingsDataHelper.updateSettings(self.teamCount, self.roundCount, self.timeInSec) { (obj) in
+        SettingsDataHelper.updateSettings(self.teamCount, self.roundCount, self.timeInSec, self.allowDuplic) { (obj) in
             print(obj);
         }
     }
     
     
     
-    func secIntoFormat(_ sec: Int) -> String{
         
-        let interval = sec
-        
-        let formatter = DateComponentsFormatter()
-        formatter.allowedUnits = [.hour, .minute, .second]
-        formatter.unitsStyle = .positional
-        
-        let formattedString = formatter.string(from: TimeInterval(interval))!
-        print(formattedString)
-        return formattedString;
-        
-    }
-    
     
     
     

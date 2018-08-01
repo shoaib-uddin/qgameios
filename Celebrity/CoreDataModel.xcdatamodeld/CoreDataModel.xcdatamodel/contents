@@ -5,6 +5,7 @@
         <attribute name="userId" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <entity name="Settings" representedClassName="Settings" syncable="YES" codeGenerationType="class">
+        <attribute name="allowDuplicate" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="roundCount" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="teamCount" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="timeInSec" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
@@ -15,11 +16,12 @@
     <entity name="Users" representedClassName="Users" syncable="YES" codeGenerationType="class">
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="teamId" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="itsCelebs" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Celeb" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Celeb" positionX="9" positionY="54" width="128" height="75"/>
-        <element name="Settings" positionX="27" positionY="81" width="128" height="90"/>
-        <element name="Team" positionX="-18" positionY="36" width="128" height="60"/>
-        <element name="Users" positionX="-45" positionY="-9" width="128" height="75"/>
+        <element name="Celeb" positionX="178" positionY="128" width="128" height="73"/>
+        <element name="Settings" positionX="7" positionY="-216" width="128" height="105"/>
+        <element name="Team" positionX="-146" positionY="-171" width="128" height="60"/>
+        <element name="Users" positionX="-146" positionY="-75" width="128" height="88"/>
     </elements>
 </model>

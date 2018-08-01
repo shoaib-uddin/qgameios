@@ -24,8 +24,25 @@
                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KM9-Tz-NRb">
                         <rect key="frame" x="16" y="0.0" width="288" height="43.5"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="918-Ab-Lyb">
+                                <rect key="frame" x="0.0" y="0.0" width="43.5" height="43.5"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fxA-CE-DgB">
+                                        <rect key="frame" x="8" y="8" width="26.5" height="26"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="fxA-CE-DgB" firstAttribute="centerY" secondItem="918-Ab-Lyb" secondAttribute="centerY" id="HHl-sk-UyR"/>
+                                    <constraint firstItem="fxA-CE-DgB" firstAttribute="centerX" secondItem="918-Ab-Lyb" secondAttribute="centerX" id="IBG-Cr-wXc"/>
+                                    <constraint firstItem="fxA-CE-DgB" firstAttribute="width" secondItem="918-Ab-Lyb" secondAttribute="width" multiplier="0.6" id="l9A-LT-yx5"/>
+                                    <constraint firstAttribute="width" secondItem="918-Ab-Lyb" secondAttribute="height" multiplier="1:1" id="rTv-N0-nrF"/>
+                                    <constraint firstItem="fxA-CE-DgB" firstAttribute="height" secondItem="918-Ab-Lyb" secondAttribute="height" multiplier="0.6" id="xhO-DT-fCF"/>
+                                </constraints>
+                            </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dLr-eZ-idV">
-                                <rect key="frame" x="0.0" y="0.0" width="201" height="43.5"/>
+                                <rect key="frame" x="43.5" y="0.0" width="157.5" height="43.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -102,9 +119,12 @@
             <connections>
                 <outlet property="btnDelete" destination="l1L-Te-51e" id="phK-4d-jBi"/>
                 <outlet property="btnEdit" destination="ol1-gB-Emp" id="JZC-j1-RnV"/>
+                <outlet property="colorView" destination="fxA-CE-DgB" id="NPe-hk-7TJ"/>
                 <outlet property="imgDelete" destination="RVi-7a-VFz" id="aD0-Te-GE9"/>
                 <outlet property="imgEdit" destination="1HV-Mr-q2a" id="Wqv-kt-gaw"/>
                 <outlet property="lblname" destination="dLr-eZ-idV" id="DHs-8q-wE3"/>
+                <outlet property="viewBar" destination="Y3d-ys-WNr" id="Kfh-CP-PMl"/>
+                <outlet property="viewDelete" destination="PaN-Mg-8xo" id="gO0-X8-DgO"/>
             </connections>
         </tableViewCell>
     </objects>

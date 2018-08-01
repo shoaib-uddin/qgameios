@@ -14,36 +14,62 @@ class CelebDataHelper{
     
     private static var entityName = "Celeb";
     // create
-    class func createCeleb(_ name: String, userId: String, completion: @escaping (_ success: NSManagedObject?) -> Void){
+    class func createCeleb(_ name: String, userObj: NSManagedObject, completion: @escaping (_ success: NSManagedObject?) -> Void){
         
-        if(self.checkIfCelebExist(name: name)){
-            
-            completion(nil);
-            
-        }else if(!checkIfCelebCountExceed(userId: userId)){
-            completion(nil);
+        
+        let item = (userObj as? Users)!
+        // if user has name return
+        // else
+            // if user limit exceed return
+            // else
+                // if duplicate allow just create
+                // else
+                    // loop each player with each celeb
+                        // if found return
+                        // else just create
+        
+        if(self.checkIfCelebExist(name: name, obj: userObj as! Users)){
+            completion(nil)
+        }else if(checkIfCelebCountExceed(userId: item)){
+            completion(nil)
+        }else if(SettingsDataHelper.isDuplicateAllowed()){
+            self.create(name, userObj: userObj) { (success) in
+                completion(success);
+            }
+        }else if( UserDataHelper.loopAllUsersForACelebrityExist(name) ){
+            completion(nil)
         }else{
-            
-            let appDelegate =  AppDelegate.getAppDelegate();
-            let context = appDelegate.persistentContainer.viewContext;
-            
-            let entity = NSEntityDescription.entity(forEntityName: entityName, in: context)
-            let item = NSManagedObject(entity: entity!, insertInto: context) as! Celeb;
-            item.setValue(name, forKey: "name");
-            item.setValue(userId, forKey: "userId");
-            
-            do{
-                try context.save();
-                completion(self.returnCelebByName(name));
-            } catch {
-                
-                print("Failed")
-                completion(nil);
+            self.create(name, userObj: userObj) { (success) in
+                completion(success);
             }
         }
         
+    }
+    
+    class private func create(_ name: String, userObj: NSManagedObject, completion: @escaping (_ success: NSManagedObject?) -> Void){
+        
+        let item = (userObj as? Users)!
+        let appDelegate =  AppDelegate.getAppDelegate();
+        let context = appDelegate.persistentContainer.viewContext;
+        let entity = NSEntityDescription.entity(forEntityName: entityName, in: context)
+        let itm = NSManagedObject(entity: entity!, insertInto: context) as! Celeb;
+        itm.setValue(name, forKey: "name");
+        itm.setValue(item.name, forKey: "userId");
+        item.addToItsCelebs(itm);
+        
+        
+        do{
+            try context.save();
+            completion(itm);
+        } catch {
+            
+            print("Failed")
+            completion(nil);
+        }
         
     }
+    
+    
     
     // update
     class func updateUser(){
@@ -75,113 +101,94 @@ class CelebDataHelper{
     }
     
     // delete
-    class func deleteCeleb(_ name: String, completion: @escaping (_ success: Bool) -> Void){
+    class func deleteCeleb(_ parent: Users, _ obj: Celeb, completion: @escaping (_ success: Bool) -> Void){
         
-        if(!self.checkIfCelebExist(name: name)){
-            
+        let appDelegate =  AppDelegate.getAppDelegate();
+        let context = appDelegate.persistentContainer.viewContext;
+
+        parent.removeFromItsCelebs(obj);
+
+        do{
+            context.delete(obj);
+            try context.save();
+            context.processPendingChanges();
+            completion(true);
+
+        } catch {
+
+            print("Failed")
             completion(false);
-            
-        }else{
-            
-            let name = name.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines);
-            let appDelegate =  AppDelegate.getAppDelegate();
-            let context = appDelegate.persistentContainer.viewContext;
-            let request = NSFetchRequest<NSFetchRequestResult>(entityName: entityName);
-            request.predicate = NSPredicate(format: "name = %@", name);
-            request.returnsObjectsAsFaults = false;
-            request.fetchLimit = 1
-            
-            do{
-                
-                let result = try context.fetch(request).first;
-                context.delete(result as! NSManagedObject);
-                
-                try context.save();
-                completion(true);
-                
-            } catch {
-                
-                print("Failed")
-                completion(false);
-            }
         }
         
     }
     
-    class func getAllCelebsByUsername(name: String) -> [NSManagedObject]{
+    class func getAllCelebsByUser(_ user: NSManagedObject) -> [NSManagedObject]{
         
         var c = [NSManagedObject]();
-        let appDelegate =  AppDelegate.getAppDelegate();
-        let context = appDelegate.persistentContainer.viewContext;
-        let request = NSFetchRequest<NSFetchRequestResult>(entityName: entityName)
-        request.predicate = NSPredicate(format: "userId = %@", name)
-        request.returnsObjectsAsFaults = false
-        do {
-            let result = try context.fetch(request)
-            for data in result as! [NSManagedObject] {
-                c.append(data);
+        
+        
+//        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Users");
+        
+        if let user = user as? Users{
+            for e in user.itsCelebs?.allObjects as! [Celeb]{
+                
+                    c.append(e);
+                
             }
-            
-        } catch {
-            
-            print("Failed")
         }
         
         return c;
+        
     }
     
-    class func checkIfCelebCountExceed(userId: String) -> Bool{
+    class func checkIfCelebCountExceed(userId: NSManagedObject) -> Bool{
         
-        let name = userId.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines);
-        let appDelegate =  AppDelegate.getAppDelegate();
-        let context = appDelegate.persistentContainer.viewContext;
-        let request = NSFetchRequest<NSFetchRequestResult>(entityName: entityName);
-        request.predicate = NSPredicate(format: "userId = %@", name);
-        request.returnsObjectsAsFaults = false;
-        request.fetchLimit = 1
-        
-        do {
-            
-            let c = try context.count(for: request);
-            if( c > 10){
-                return false;
-            }else{
-                return true;
-            }
-            
-        } catch {
-            
-            print("Failed")
+        let r = userId as? Users;
+        let c = r?.itsCelebs?.count;
+        if( c! > 10){
+            return true;
+        }else{
             return false;
         }
         
         
     }
     
-    class func checkIfCelebExist(name: String) -> Bool{
+    class func checkIfCelebExist(name: String, obj: Users) -> Bool{
         
         let name = name.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines);
-        let appDelegate =  AppDelegate.getAppDelegate();
-        let context = appDelegate.persistentContainer.viewContext;
-        let request = NSFetchRequest<NSFetchRequestResult>(entityName: entityName);
-        request.predicate = NSPredicate(format: "name = %@", name);
-        request.returnsObjectsAsFaults = false;
-        request.fetchLimit = 1
-        
-        do {
-            
-            let c = try context.count(for: request);
-            if( c == 0){
-                return false;
-            }else{
+        for item in obj.itsCelebs!{
+            let n = item as? Celeb;
+            if(n?.name == name){
                 return true;
             }
-            
-        } catch {
-            
-            print("Failed")
-            return false;
         }
+        
+        return false;
+        
+        
+        
+//        let appDelegate =  AppDelegate.getAppDelegate();
+//        let context = appDelegate.persistentContainer.viewContext;
+//        let request = NSFetchRequest<NSFetchRequestResult>(entityName: entityName);
+//        request.predicate = NSPredicate(format: "name = %@", name);
+//        request.returnsObjectsAsFaults = false;
+//        request.fetchLimit = 1
+//
+//        do {
+//
+//            let c = try context.count(for: request);
+//            if( c == 0){
+//                return false;
+//            }else{
+//                return true;
+//            }
+//
+//        } catch {
+//
+//            print("Failed")
+//            return false;
+//        }
         
         
     }

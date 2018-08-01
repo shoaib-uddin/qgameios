@@ -1,16 +1,28 @@
 PODS:
+  - DropDown (2.3.1)
+  - IQKeyboardManagerSwift (5.0.7)
+  - LKAlertController (1.12.1)
   - SwiftIconFont (2.7.3)
 
 DEPENDENCIES:
+  - DropDown
+  - IQKeyboardManagerSwift
+  - LKAlertController
   - SwiftIconFont
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - DropDown
+    - IQKeyboardManagerSwift
+    - LKAlertController
     - SwiftIconFont
 
 SPEC CHECKSUMS:
+  DropDown: 20499c7b2731b0d21609af924e47c7677a2be50d
+  IQKeyboardManagerSwift: 30fb3a61de1af53a95e02b80fb54ed0a19d5ede5
+  LKAlertController: e229465c0b4543ea122bfe62567747e6213ee43f
   SwiftIconFont: ebd8ee931a1e7072b61a87aec53f3a0786ef7f2b
 
-PODFILE CHECKSUM: 65bbdfacca14be93082cd226b0ee252252954394
+PODFILE CHECKSUM: ed999202b77ecaeb432d87aeac6cecbb9e237c87
 
 COCOAPODS: 1.5.3

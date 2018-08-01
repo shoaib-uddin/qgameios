@@ -36,5 +36,25 @@ class DataHelper{
         }
         
     }
+    
+    
+    
+    class func returnName(_ obj: NSManagedObject) -> String{
+        
+        var pname = ""
+        if let data = obj as? Users{
+            pname = data.name!
+        };
+        
+        if let data = obj as? Celeb{
+            
+            pname = data.name!
+        };
+        
+        return pname;
+        
+        
+    }
+
 
 }

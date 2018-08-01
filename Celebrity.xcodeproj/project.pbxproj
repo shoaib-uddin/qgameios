@@ -21,6 +21,9 @@
 		0A79D24021062CAD001DFC1A /* AddCelebView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A79D23F21062CAD001DFC1A /* AddCelebView.xib */; };
 		0A79D24221062F1D001DFC1A /* CelebDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A79D24121062F1D001DFC1A /* CelebDataHelper.swift */; };
 		0A79D2442106879D001DFC1A /* GameBoardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A79D2432106879D001DFC1A /* GameBoardVC.swift */; };
+		0A84D8FC2108E6FF00625ADF /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A84D8FB2108E6FF00625ADF /* Constants.swift */; };
+		0A84D8FF2108EB1700625ADF /* ChoseTeamTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A84D8FD2108EB1700625ADF /* ChoseTeamTVC.swift */; };
+		0A84D9002108EB1700625ADF /* ChoseTeamTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A84D8FE2108EB1700625ADF /* ChoseTeamTVC.xib */; };
 		0AB46EBE21026EC50092BFE1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB46EBD21026EC50092BFE1 /* AppDelegate.swift */; };
 		0AB46EC021026EC50092BFE1 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 0AB46EBF21026EC50092BFE1 /* GameScene.sks */; };
 		0AB46EC221026EC50092BFE1 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 0AB46EC121026EC50092BFE1 /* Actions.sks */; };
@@ -34,6 +37,9 @@
 		0AB46EDC2103431D0092BFE1 /* DataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB46EDB2103431D0092BFE1 /* DataHelper.swift */; };
 		0AB46EDF210346290092BFE1 /* UtilityHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB46EDE210346290092BFE1 /* UtilityHelper.swift */; };
 		0AB46EE421038FCC0092BFE1 /* TeamDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB46EE321038FCC0092BFE1 /* TeamDataHelper.swift */; };
+		0ADE1309210E6E0C00C49374 /* UserTurnView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0ADE1308210E6E0C00C49374 /* UserTurnView.xib */; };
+		0ADE130B210E6E2900C49374 /* UserTurnView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ADE130A210E6E2800C49374 /* UserTurnView.swift */; };
+		0ADE130D211103AE00C49374 /* ExtensionHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ADE130C211103AE00C49374 /* ExtensionHelper.swift */; };
 		32D37B3C09491C843A1BE3A8 /* Pods_Celebrity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D491A1CDBB844C38FECAB117 /* Pods_Celebrity.framework */; };
 /* End PBXBuildFile section */
 
@@ -53,6 +59,9 @@
 		0A79D23F21062CAD001DFC1A /* AddCelebView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddCelebView.xib; sourceTree = "<group>"; };
 		0A79D24121062F1D001DFC1A /* CelebDataHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CelebDataHelper.swift; sourceTree = "<group>"; };
 		0A79D2432106879D001DFC1A /* GameBoardVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameBoardVC.swift; sourceTree = "<group>"; };
+		0A84D8FB2108E6FF00625ADF /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		0A84D8FD2108EB1700625ADF /* ChoseTeamTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoseTeamTVC.swift; sourceTree = "<group>"; };
+		0A84D8FE2108EB1700625ADF /* ChoseTeamTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChoseTeamTVC.xib; sourceTree = "<group>"; };
 		0AB46EBA21026EC50092BFE1 /* Celebrity.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Celebrity.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0AB46EBD21026EC50092BFE1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0AB46EBF21026EC50092BFE1 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -68,6 +77,9 @@
 		0AB46EDB2103431D0092BFE1 /* DataHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataHelper.swift; sourceTree = "<group>"; };
 		0AB46EDE210346290092BFE1 /* UtilityHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilityHelper.swift; sourceTree = "<group>"; };
 		0AB46EE321038FCC0092BFE1 /* TeamDataHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamDataHelper.swift; sourceTree = "<group>"; };
+		0ADE1308210E6E0C00C49374 /* UserTurnView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserTurnView.xib; sourceTree = "<group>"; };
+		0ADE130A210E6E2800C49374 /* UserTurnView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTurnView.swift; sourceTree = "<group>"; };
+		0ADE130C211103AE00C49374 /* ExtensionHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionHelper.swift; sourceTree = "<group>"; };
 		76FD448058C6A83332B06706 /* Pods-Celebrity.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Celebrity.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Celebrity/Pods-Celebrity.debug.xcconfig"; sourceTree = "<group>"; };
 		D491A1CDBB844C38FECAB117 /* Pods_Celebrity.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Celebrity.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -155,6 +167,10 @@
 				0A79D23B2104F1CD001DFC1A /* AddUserView.swift */,
 				0A79D23F21062CAD001DFC1A /* AddCelebView.xib */,
 				0A79D23D21062C81001DFC1A /* AddCelebVIew.swift */,
+				0A84D8FD2108EB1700625ADF /* ChoseTeamTVC.swift */,
+				0A84D8FE2108EB1700625ADF /* ChoseTeamTVC.xib */,
+				0ADE1308210E6E0C00C49374 /* UserTurnView.xib */,
+				0ADE130A210E6E2800C49374 /* UserTurnView.swift */,
 			);
 			path = Subviews;
 			sourceTree = "<group>";
@@ -216,6 +232,8 @@
 				0AB46EDE210346290092BFE1 /* UtilityHelper.swift */,
 				0A79D22A21046736001DFC1A /* PageRedirectHelper.swift */,
 				0A79D22C21047059001DFC1A /* CSSHelper.swift */,
+				0A84D8FB2108E6FF00625ADF /* Constants.swift */,
+				0ADE130C211103AE00C49374 /* ExtensionHelper.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -314,9 +332,11 @@
 				0AB46EC921026EC50092BFE1 /* Main.storyboard in Resources */,
 				0AB46EC021026EC50092BFE1 /* GameScene.sks in Resources */,
 				0AB46ECB21026ED10092BFE1 /* Assets.xcassets in Resources */,
+				0ADE1309210E6E0C00C49374 /* UserTurnView.xib in Resources */,
 				0A79D23A2104F1B8001DFC1A /* AddUserView.xib in Resources */,
 				0AB46ECE21026ED10092BFE1 /* LaunchScreen.storyboard in Resources */,
 				0AB46EC221026EC50092BFE1 /* Actions.sks in Resources */,
+				0A84D9002108EB1700625ADF /* ChoseTeamTVC.xib in Resources */,
 				0A79D2362104B383001DFC1A /* EListTVC.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -349,10 +369,16 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Celebrity/Pods-Celebrity-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/DropDown/DropDown.framework",
+				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/LKAlertController/LKAlertController.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftIconFont/SwiftIconFont.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DropDown.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LKAlertController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftIconFont.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -367,6 +393,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0ADE130B210E6E2900C49374 /* UserTurnView.swift in Sources */,
 				0AB46EDF210346290092BFE1 /* UtilityHelper.swift in Sources */,
 				0A79D22F2104754B001DFC1A /* SettingsDataHelper.swift in Sources */,
 				0AB46EC421026EC50092BFE1 /* GameScene.swift in Sources */,
@@ -375,13 +402,16 @@
 				0A79D227210450E3001DFC1A /* HomeVC.swift in Sources */,
 				0A79D2382104E1E9001DFC1A /* ElistVC.swift in Sources */,
 				0AB46EC621026EC50092BFE1 /* GameViewController.swift in Sources */,
+				0A84D8FF2108EB1700625ADF /* ChoseTeamTVC.swift in Sources */,
 				0A79D24221062F1D001DFC1A /* CelebDataHelper.swift in Sources */,
+				0ADE130D211103AE00C49374 /* ExtensionHelper.swift in Sources */,
 				0AB46EDC2103431D0092BFE1 /* DataHelper.swift in Sources */,
 				0AB46ED721033FC60092BFE1 /* CoreDataModel.xcdatamodeld in Sources */,
 				0AB46EE421038FCC0092BFE1 /* TeamDataHelper.swift in Sources */,
 				0A79D2352104B383001DFC1A /* EListTVC.swift in Sources */,
 				0AB46EBE21026EC50092BFE1 /* AppDelegate.swift in Sources */,
 				0A79D22B21046736001DFC1A /* PageRedirectHelper.swift in Sources */,
+				0A84D8FC2108E6FF00625ADF /* Constants.swift in Sources */,
 				0A79D23E21062C81001DFC1A /* AddCelebVIew.swift in Sources */,
 				0A79D22921045669001DFC1A /* SettingsVC.swift in Sources */,
 				0A79D22D21047059001DFC1A /* CSSHelper.swift in Sources */,
@@ -531,6 +561,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = UC523K9GG7;
 				INFOPLIST_FILE = Celebrity/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -549,6 +580,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = UC523K9GG7;
 				INFOPLIST_FILE = Celebrity/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

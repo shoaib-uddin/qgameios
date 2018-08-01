@@ -18,6 +18,7 @@ import CoreData
 class AddCelebView: UIView{
     
     var pname = "";
+    var obj: NSManagedObject!;
     @IBOutlet weak var forTeam: UILabel!
     @IBOutlet weak var txtName: UITextField!
     weak var delegate:AddCelebViewDelegate?;
@@ -33,6 +34,11 @@ class AddCelebView: UIView{
         self.forTeam.text = "For - \(name)";
     }
     
+    func setData(obj: NSManagedObject){
+        self.obj = obj;
+        self.forTeam.text = "For - \(DataHelper.returnName(obj))";
+    }
+    
     @IBAction func cancelView(_ sender: UIButton) {
         self.delegate?.refreshCelebList(view: self);
         self.removeFromSuperview();
@@ -41,7 +47,7 @@ class AddCelebView: UIView{
     @IBAction func addView(_ sender: UIButton) {
         
         let t = self.txtName.text!;
-        CelebDataHelper.createCeleb(self.txtName.text!, userId: pname) { (obj) in
+        CelebDataHelper.createCeleb(self.txtName.text!, userObj: obj) { (obj) in
             print(obj);
             self.delegate?.refreshCelebList(view: self);
             self.removeFromSuperview();

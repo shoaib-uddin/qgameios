@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -20,16 +21,16 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M9K-sx-7tO">
                     <rect key="frame" x="37" y="140" width="300" height="200"/>
                     <subviews>
-                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="a3E-73-q1E">
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="a3E-73-q1E">
                             <rect key="frame" x="15" y="10" width="270" height="116"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter Player Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="URg-ir-37H">
-                                    <rect key="frame" x="64.5" y="0.0" width="141" height="29"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter Player Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="URg-ir-37H">
+                                    <rect key="frame" x="0.0" y="0.0" width="270" height="29"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cmE-XK-FaQ">
+                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cmE-XK-FaQ">
                                     <rect key="frame" x="0.0" y="29" width="270" height="29"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="29" id="yjj-gl-vRP"/>
@@ -38,18 +39,66 @@
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <textInputTraits key="textInputTraits"/>
                                 </textField>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="For - Team 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1jN-So-RhP">
-                                    <rect key="frame" x="87.5" y="58" width="95" height="29"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose team" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1jN-So-RhP">
+                                    <rect key="frame" x="0.0" y="58" width="270" height="29"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minimumValue="1" maximumValue="4" translatesAutoresizingMaskIntoConstraints="NO" id="mtI-j2-sFv">
-                                    <rect key="frame" x="88" y="87" width="94" height="29"/>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tzn-TE-lx0">
+                                    <rect key="frame" x="0.0" y="87" width="270" height="29"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qE2-yN-YEu">
+                                            <rect key="frame" x="0.0" y="0.0" width="270" height="29"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Gh-4R-ymU">
+                                                    <rect key="frame" x="0.0" y="0.0" width="29" height="29"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="2Gh-4R-ymU" secondAttribute="height" multiplier="1:1" id="7bS-VT-Fuo"/>
+                                                    </constraints>
+                                                </view>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Team 1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Nm-KB-Cx9">
+                                                    <rect key="frame" x="29" y="0.0" width="212" height="29"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ung-nS-JnH">
+                                                    <rect key="frame" x="241" y="0.0" width="29" height="29"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="ung-nS-JnH" secondAttribute="height" multiplier="1:1" id="qHg-bS-WkC"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                        </stackView>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="znQ-EF-baq">
+                                            <rect key="frame" x="0.0" y="-0.5" width="270" height="29"/>
+                                            <connections>
+                                                <action selector="showDD:" destination="iN0-l3-epB" eventType="touchUpInside" id="L9P-ul-kI1"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstItem="znQ-EF-baq" firstAttribute="width" secondItem="tzn-TE-lx0" secondAttribute="width" id="3NO-Xw-fmH"/>
+                                        <constraint firstItem="znQ-EF-baq" firstAttribute="centerY" secondItem="tzn-TE-lx0" secondAttribute="centerY" id="CLI-sO-AoI"/>
+                                        <constraint firstItem="qE2-yN-YEu" firstAttribute="width" secondItem="tzn-TE-lx0" secondAttribute="width" id="EOn-Tw-j8P"/>
+                                        <constraint firstItem="znQ-EF-baq" firstAttribute="height" secondItem="tzn-TE-lx0" secondAttribute="height" id="Jz8-ak-QXv"/>
+                                        <constraint firstItem="qE2-yN-YEu" firstAttribute="height" secondItem="tzn-TE-lx0" secondAttribute="height" id="Kzj-oO-eZW"/>
+                                        <constraint firstItem="qE2-yN-YEu" firstAttribute="centerY" secondItem="tzn-TE-lx0" secondAttribute="centerY" id="M1u-Zq-3Xd"/>
+                                        <constraint firstItem="qE2-yN-YEu" firstAttribute="centerX" secondItem="tzn-TE-lx0" secondAttribute="centerX" id="Nfa-ha-QZZ"/>
+                                        <constraint firstItem="znQ-EF-baq" firstAttribute="centerX" secondItem="tzn-TE-lx0" secondAttribute="centerX" id="ygc-HV-4Fb"/>
+                                    </constraints>
+                                </view>
+                                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dsv-N2-JfM">
+                                    <rect key="frame" x="0.0" y="116" width="270" height="0.0"/>
+                                    <state key="normal" title="Remove Player"/>
                                     <connections>
-                                        <action selector="setTeam:" destination="iN0-l3-epB" eventType="valueChanged" id="L8N-zV-lsr"/>
+                                        <action selector="removeUser:" destination="iN0-l3-epB" eventType="touchUpInside" id="VqX-zS-B2O"/>
                                     </connections>
-                                </stepper>
+                                </button>
                             </subviews>
                             <constraints>
                                 <constraint firstItem="cmE-XK-FaQ" firstAttribute="width" secondItem="a3E-73-q1E" secondAttribute="width" id="EGE-oI-q4b"/>
@@ -104,8 +153,11 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <connections>
-                <outlet property="forTeam" destination="1jN-So-RhP" id="v4b-cW-YIp"/>
-                <outlet property="stepper" destination="mtI-j2-sFv" id="aqa-IO-ujQ"/>
+                <outlet property="btnRemoveUser" destination="dsv-N2-JfM" id="rOr-xe-UEy"/>
+                <outlet property="colorView" destination="2Gh-4R-ymU" id="HQv-wt-EVU"/>
+                <outlet property="dropView" destination="tzn-TE-lx0" id="acc-B8-ASQ"/>
+                <outlet property="forTeam" destination="8Nm-KB-Cx9" id="haq-r2-x2O"/>
+                <outlet property="showDropdown" destination="znQ-EF-baq" id="jba-Tj-h4X"/>
                 <outlet property="txtName" destination="cmE-XK-FaQ" id="zTf-44-ddp"/>
             </connections>
         </view>

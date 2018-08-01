@@ -8,5 +8,8 @@ target 'Celebrity' do
   # Pods for Celebrity
 
 pod 'SwiftIconFont'
+pod 'DropDown'
+pod 'LKAlertController'
+pod 'IQKeyboardManagerSwift'
 
 end

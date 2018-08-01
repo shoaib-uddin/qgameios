@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import IQKeyboardManagerSwift;
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -18,8 +19,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
+        IQKeyboardManager.sharedManager().enable = true;
+        
         if(!SettingsDataHelper.checkIfSettingsExist()){
-            SettingsDataHelper.createSettings(2, 2, 60) { (set) in
+            SettingsDataHelper.createSettings(2, 2, 60, false) { (set) in
                 print(set);
             }
         }

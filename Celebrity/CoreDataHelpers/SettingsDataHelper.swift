@@ -14,7 +14,7 @@ class SettingsDataHelper{
     
     private static var entityName = "Settings";
     // create
-    class func createSettings(_ teamCount: Int, _ roundCount: Int, _ timeInSec: Int, completion: @escaping (_ success: NSManagedObject?) -> Void){
+    class func createSettings(_ teamCount: Int, _ roundCount: Int, _ timeInSec: Int, _ dulplicate: Bool, completion: @escaping (_ success: NSManagedObject?) -> Void){
             
         let appDelegate =  AppDelegate.getAppDelegate();
         let context = appDelegate.persistentContainer.viewContext;
@@ -24,6 +24,8 @@ class SettingsDataHelper{
         item.setValue(Int32(teamCount), forKey: "teamCount");
         item.setValue(Int32(roundCount), forKey: "roundCount");
         item.setValue(Int32(timeInSec), forKey: "timeInSec");
+        item.setValue(Bool(dulplicate), forKey: "allowDuplicate");
+        
         
         do{
             
@@ -41,7 +43,7 @@ class SettingsDataHelper{
     }
     
     // update
-    class func updateSettings(_ teamCount: Int, _ roundCount: Int, _ timeInSec: Int, completion: @escaping (_ success: NSManagedObject?) -> Void){
+    class func updateSettings(_ teamCount: Int, _ roundCount: Int, _ timeInSec: Int, _ dulplicate: Bool, completion: @escaping (_ success: NSManagedObject?) -> Void){
         // not required but may be in future
         
         let appDelegate =  AppDelegate.getAppDelegate();
@@ -56,12 +58,13 @@ class SettingsDataHelper{
                 result.teamCount = Int32(teamCount);
                 result.roundCount = Int32(roundCount);
                 result.timeInSec = Int32(timeInSec);
+                result.allowDuplicate = Bool(dulplicate);
                 
                 try context.save();
                 completion(result);
             }else{
                 
-                self.createSettings(teamCount, roundCount, timeInSec) { (res) in
+                self.createSettings(teamCount, roundCount, timeInSec, dulplicate) { (res) in
                     completion(res);
                 }
                 
@@ -96,6 +99,33 @@ class SettingsDataHelper{
         }
         
     }
+    
+    class func isDuplicateAllowed() ->Bool{
+        
+        let appDelegate =  AppDelegate.getAppDelegate();
+        let context = appDelegate.persistentContainer.viewContext;
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: entityName);
+        request.returnsObjectsAsFaults = false;
+        request.fetchLimit = 1
+        
+        do {
+            
+            let result = try context.fetch(request).first;
+            if let res = result as? Settings{
+                return res.allowDuplicate;
+            }else{
+                return false;
+            };
+            
+        } catch {
+            
+            print("Failed")
+            return false;
+        }
+        
+    }
+    
+    
     
     // Check
     class func checkIfSettingsExist() -> Bool{

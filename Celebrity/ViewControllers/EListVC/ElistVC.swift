@@ -51,7 +51,11 @@ class EListVC: UIViewController, AddUserViewDelegate, AddCelebViewDelegate, ELis
         case "celebs":
             //
             self.btnBeReady.isHidden = true;
-            self.collectionArray = CelebDataHelper.getAllCelebsByUsername(name: returnName());
+            let name = DataHelper.returnName(self.username);
+            self.title = "\(name)'s Celebrities";
+            
+            
+            self.collectionArray = CelebDataHelper.getAllCelebsByUser(self.username);
             self.tableView.reloadData();
             
             
@@ -97,7 +101,7 @@ class EListVC: UIViewController, AddUserViewDelegate, AddCelebViewDelegate, ELis
                 self.addcelebview.frame = CGRect(x: 0, y: 0, width: w, height: h);
                 self.addcelebview.delegate = self;
                 self.addcelebview.tag = 80;
-                self.addcelebview.setData(name: returnName())
+                self.addcelebview.setData(obj: self.username)
                 self.view.addSubview(self.addcelebview)
             }
             
@@ -130,13 +134,14 @@ class EListVC: UIViewController, AddUserViewDelegate, AddCelebViewDelegate, ELis
     }
     
     // delegate
-    func removeUserFromList(cell: UITableViewCell, name: String) {
+    func removeUserFromList(cell: UITableViewCell, obj: NSManagedObject) {
         
-        print()
+        
+        
         switch listType {
         case "users":
             //
-            UserDataHelper.deleteUser(name) { (success) in
+            UserDataHelper.deleteUser(obj) { (success) in
                 print(success);
                 self.collectionArray = UserDataHelper.getAllUsers();
                 self.tableView.reloadData();
@@ -144,9 +149,9 @@ class EListVC: UIViewController, AddUserViewDelegate, AddCelebViewDelegate, ELis
             break;
         case "celebs":
             //
-            
-            CelebDataHelper.deleteCeleb(name) { (success) in
-                self.collectionArray = CelebDataHelper.getAllCelebsByUsername(name: self.returnName())
+            CelebDataHelper.deleteCeleb(self.username as! Users, obj as! Celeb) { (success) in
+                //
+                self.collectionArray = CelebDataHelper.getAllCelebsByUser(self.username);
                 self.tableView.reloadData()
             }
             break;
@@ -158,19 +163,7 @@ class EListVC: UIViewController, AddUserViewDelegate, AddCelebViewDelegate, ELis
         
     }
     
-    func returnName() -> String{
         
-        var pname = ""
-        if let data = self.username as? Users{
-            self.title = "\(data.name!)'s Celebrities";
-            pname = data.name!
-        };
-        
-        return pname;
-        
-        
-    }
-    
     
     
     
@@ -184,6 +177,10 @@ extension EListVC: UITableViewDataSource, UITableViewDelegate{
         return 1
     }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 43.5;
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.collectionArray.count;
     }
@@ -194,6 +191,24 @@ extension EListVC: UITableViewDataSource, UITableViewDelegate{
         cell.setData(self.collectionArray[indexPath.row]);
         cell.delegate = self;
         cell.selectionStyle = .none;
+        
+        switch self.listType {
+        case "users":
+            //
+            
+            cell.viewBar.isHidden = false;
+//            cell.viewDelete.isHidden = true;
+            break;
+        case "celebs":
+            //
+            cell.viewBar.isHidden = true;
+//            cell.viewDelete.isHidden = false;
+            break;
+        default:
+            // do nothing
+            break;
+            
+        }
         
         return cell
         
