@@ -11,19 +11,21 @@ import UIKit
 import CoreData
 
 @objc protocol UserTurnViewDelegate {
-    func SwitchPlayer(view : UserTurnView);
+    func SwitchPlayer(view : UserTurnView, user: Users, write: [Celeb], wrong: [Celeb]);
 }
 
 class UserTurnView: UIView{
     
     @IBOutlet weak var lblTime: UILabel!
     @IBOutlet weak var lblUsername: UILabel!
-    @IBOutlet weak var lblCelebname: UILabel!
     @IBOutlet weak var lblWritecount: UILabel!
     @IBOutlet weak var lblWrongcount: UILabel!
     @IBOutlet weak var imgWriteicon: UIImageView!
     @IBOutlet weak var imgWrongicon: UIImageView!
     @IBOutlet weak var imgPlusicon: UIImageView!
+    @IBOutlet weak var collectionView: UICollectionView!
+    
+    
     
     weak var delegate:UserTurnViewDelegate?;
     var settings = SettingsDataHelper.returnSettings() as! Settings;
@@ -32,11 +34,13 @@ class UserTurnView: UIView{
     var celebArrayRite: [Celeb] = [Celeb]();
     var celebArrayWrong: [Celeb] = [Celeb]();
     var visibleCeleb: Celeb!;
-    
+    var tmr: Timer!;
+    var iuser: Users!;
     
     override func awakeFromNib() {
         //
-        
+        lblWritecount.text = "\(0)";
+        lblWrongcount.text = "\(0)";
         lblWritecount.backgroundColor = CSS.colorWithHexString(Colors.green);
         lblWritecount.roundImageBorder(color: Colors.green, width: 1);
         lblWrongcount.backgroundColor = CSS.colorWithHexString(Colors.red);
@@ -50,18 +54,27 @@ class UserTurnView: UIView{
         CSS.setFontImageVisualsMaterial(imgWrongicon, name: "close", color: Colors.white);
         CSS.setFontImageVisualsMaterial(imgWriteicon, name: "done", color: Colors.white);
         CSS.setFontImageVisualsMaterial(imgPlusicon, name: "add", color: Colors.white);
-        
-        
         p = Int(settings.timeInSec);
+        
+        collectionView.register(UINib(nibName: "CelebCVC", bundle: nil), forCellWithReuseIdentifier: "CelebCVC");
+        collectionView.delegate = self;
+        collectionView.dataSource = self;
+        collectionView.allowsMultipleSelection = false;
+        if #available(iOS 11.0, *) {
+            collectionView?.contentInsetAdjustmentBehavior = .always
+        }
+        
+        
         
     }
     
     func setData(_ user: Users){
         
-        lblUsername.text = "\(user.name)'s turn"
+        lblUsername.text = "\(user.name! ?? "")'s turn"
         celebArray = CelebDataHelper.getAllCelebsByUser(user) as! [Celeb];
-        let rand = UtilityHelper.randomNumber(inRange: 0...(celebArray.count - 1))
-        showACeleb(celebArray[rand], rand);
+        self.iuser = user;
+//        let rand = UtilityHelper.randomNumber(inRange: 0...(celebArray.count - 1))
+//        showACeleb(celebArray[rand], rand);
     }
     
     func startTImeOut(){
@@ -75,20 +88,58 @@ class UserTurnView: UIView{
         
         self.lblTime.text = "\(UtilityHelper.secIntoFormat(p))";
         
-        if(p < 0){ timer.invalidate() }
+        if(p < 0){
+            
+            timer.invalidate()
+            
+        }
         else{
             p = p - 1;
             self.lblTime.text = "\(UtilityHelper.secIntoFormat(p))";
         }
     }
     
-    func showACeleb(_ ce: Celeb, _ index: Int){
-        
-        lblCelebname.text = ce.name;
-        startTImeOut()
-        
+    @IBAction func wrongAnswer(_ sender: UIButton) {
+        let i = returnVisibleIndexPath();
+        celebArrayWrong.append(celebArray[i.row]);
+        celebArray.remove(at: i.row);
+        collectionView.reloadData();
+        lblWrongcount.text = "\(celebArrayWrong.count)";
+        checkIfCelebsEnds()
     }
     
+    @IBAction func writeAnswer(_ sender: UIButton) {
+        let i = returnVisibleIndexPath();
+        celebArrayRite.append(celebArray[i.row]);
+        celebArray.remove(at: i.row);
+        collectionView.reloadData();
+        lblWritecount.text = "\(celebArrayRite.count)";
+        checkIfCelebsEnds()
+    }
+    
+    @IBAction func skipAnswer(_ sender: UIButton) {
+        let i = returnVisibleIndexPath();
+        celebArray.rearrange(from: i.row, to: (celebArray.count - 1) )
+        collectionView.reloadData();
+        checkIfCelebsEnds()
+    }
+    
+    
+    
+    func returnVisibleIndexPath() -> IndexPath{
+        var visibleRect: CGRect = CGRect()
+        visibleRect.origin = (collectionView?.contentOffset)!
+        visibleRect.size = (collectionView?.bounds.size)!
+        let visiblePoint = CGPoint(x: visibleRect.midX, y: visibleRect.midY)
+        let visibleIndexPath: IndexPath? = collectionView?.indexPathForItem(at: visiblePoint)
+        return visibleIndexPath!;
+    }
+    
+    func checkIfCelebsEnds(){
+        if(celebArray.count <= 0){
+            delegate?.SwitchPlayer(view: self, user: iuser, write: celebArrayRite, wrong: celebArrayWrong);
+        }
+    }
     
 
     

@@ -55,6 +55,7 @@ class CelebDataHelper{
         let itm = NSManagedObject(entity: entity!, insertInto: context) as! Celeb;
         itm.setValue(name, forKey: "name");
         itm.setValue(item.name, forKey: "userId");
+        itm.setValue(false, forKey: "correct");
         item.addToItsCelebs(itm);
         
         

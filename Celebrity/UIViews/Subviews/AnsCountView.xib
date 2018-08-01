@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" restorationIdentifier="AnsCountView" id="iN0-l3-epB" customClass="AnsCountView" customModule="Celebrity" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="422"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="M5S-eF-krZ">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="422"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="duH-jy-eKl">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NLN-tN-z3G">
+                                    <rect key="frame" x="0.0" y="0.0" width="187.5" height="60"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Jyq-tJ-HXT">
+                                            <rect key="frame" x="73" y="9" width="42" height="42"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="Jyq-tJ-HXT" secondAttribute="height" multiplier="1:1" id="BVQ-QU-5ze"/>
+                                            </constraints>
+                                        </imageView>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstItem="Jyq-tJ-HXT" firstAttribute="centerX" secondItem="NLN-tN-z3G" secondAttribute="centerX" id="e8K-wq-Ard"/>
+                                        <constraint firstItem="Jyq-tJ-HXT" firstAttribute="height" secondItem="NLN-tN-z3G" secondAttribute="height" multiplier="0.7" id="hZc-GE-NpU"/>
+                                        <constraint firstItem="Jyq-tJ-HXT" firstAttribute="centerY" secondItem="NLN-tN-z3G" secondAttribute="centerY" id="mKM-9g-4gn"/>
+                                    </constraints>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2AI-Fy-RTk">
+                                    <rect key="frame" x="187.5" y="0.0" width="187.5" height="60"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="iQG-LD-tjk">
+                                            <rect key="frame" x="73" y="9" width="42" height="42"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="iQG-LD-tjk" secondAttribute="height" multiplier="1:1" id="Mj6-gk-zQ9"/>
+                                            </constraints>
+                                        </imageView>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstItem="iQG-LD-tjk" firstAttribute="centerX" secondItem="2AI-Fy-RTk" secondAttribute="centerX" id="6DN-wM-z6j"/>
+                                        <constraint firstItem="iQG-LD-tjk" firstAttribute="height" secondItem="2AI-Fy-RTk" secondAttribute="height" multiplier="0.7" id="BOY-kO-sd2"/>
+                                        <constraint firstItem="iQG-LD-tjk" firstAttribute="centerY" secondItem="2AI-Fy-RTk" secondAttribute="centerY" id="eIC-RS-pqJ"/>
+                                    </constraints>
+                                </view>
+                            </subviews>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="60" id="pYn-AX-OFx"/>
+                            </constraints>
+                        </stackView>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="gSb-oD-2hp">
+                            <rect key="frame" x="0.0" y="60" width="375" height="362"/>
+                            <subviews>
+                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="uCI-W4-2DY">
+                                    <rect key="frame" x="0.0" y="0.0" width="187.5" height="362"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ZXs-D4-DlW">
+                                        <size key="itemSize" width="50" height="50"/>
+                                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                    </collectionViewFlowLayout>
+                                </collectionView>
+                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="ven-rB-IF8">
+                                    <rect key="frame" x="187.5" y="0.0" width="187.5" height="362"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="L3D-5H-Gch">
+                                        <size key="itemSize" width="50" height="50"/>
+                                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                    </collectionViewFlowLayout>
+                                </collectionView>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                </stackView>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="M5S-eF-krZ" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" id="56c-BQ-x5U"/>
+                <constraint firstItem="M5S-eF-krZ" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="AKP-Lr-vqR"/>
+                <constraint firstItem="M5S-eF-krZ" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="aae-A1-kwQ"/>
+                <constraint firstItem="M5S-eF-krZ" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" id="cJH-9M-oX7"/>
+            </constraints>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="imgWriteicon" destination="iQG-LD-tjk" id="WG4-n0-zyf"/>
+                <outlet property="imgWrongicon" destination="Jyq-tJ-HXT" id="9ye-ai-umb"/>
+                <outlet property="writeCollection" destination="ven-rB-IF8" id="JSe-Yw-ivM"/>
+                <outlet property="wrongCollection" destination="uCI-W4-2DY" id="9rG-M1-tdC"/>
+            </connections>
+            <point key="canvasLocation" x="25.5" y="174"/>
+        </view>
+    </objects>
+</document>

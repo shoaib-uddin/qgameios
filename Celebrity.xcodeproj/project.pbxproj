@@ -40,6 +40,11 @@
 		0ADE1309210E6E0C00C49374 /* UserTurnView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0ADE1308210E6E0C00C49374 /* UserTurnView.xib */; };
 		0ADE130B210E6E2900C49374 /* UserTurnView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ADE130A210E6E2800C49374 /* UserTurnView.swift */; };
 		0ADE130D211103AE00C49374 /* ExtensionHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ADE130C211103AE00C49374 /* ExtensionHelper.swift */; };
+		0ADE131021121BF100C49374 /* CelebCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ADE130E21121BF100C49374 /* CelebCVC.swift */; };
+		0ADE131121121BF100C49374 /* CelebCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0ADE130F21121BF100C49374 /* CelebCVC.xib */; };
+		0ADE131321121CED00C49374 /* UserTurnViewCV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ADE131221121CED00C49374 /* UserTurnViewCV.swift */; };
+		0ADE13152112376E00C49374 /* AnsCountView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0ADE13142112376E00C49374 /* AnsCountView.xib */; };
+		0ADE13172112378000C49374 /* AnsCountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ADE13162112378000C49374 /* AnsCountView.swift */; };
 		32D37B3C09491C843A1BE3A8 /* Pods_Celebrity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D491A1CDBB844C38FECAB117 /* Pods_Celebrity.framework */; };
 /* End PBXBuildFile section */
 
@@ -80,6 +85,11 @@
 		0ADE1308210E6E0C00C49374 /* UserTurnView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserTurnView.xib; sourceTree = "<group>"; };
 		0ADE130A210E6E2800C49374 /* UserTurnView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTurnView.swift; sourceTree = "<group>"; };
 		0ADE130C211103AE00C49374 /* ExtensionHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionHelper.swift; sourceTree = "<group>"; };
+		0ADE130E21121BF100C49374 /* CelebCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CelebCVC.swift; sourceTree = "<group>"; };
+		0ADE130F21121BF100C49374 /* CelebCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CelebCVC.xib; sourceTree = "<group>"; };
+		0ADE131221121CED00C49374 /* UserTurnViewCV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTurnViewCV.swift; sourceTree = "<group>"; };
+		0ADE13142112376E00C49374 /* AnsCountView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AnsCountView.xib; sourceTree = "<group>"; };
+		0ADE13162112378000C49374 /* AnsCountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnsCountView.swift; sourceTree = "<group>"; };
 		76FD448058C6A83332B06706 /* Pods-Celebrity.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Celebrity.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Celebrity/Pods-Celebrity.debug.xcconfig"; sourceTree = "<group>"; };
 		D491A1CDBB844C38FECAB117 /* Pods_Celebrity.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Celebrity.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -156,6 +166,8 @@
 			children = (
 				0A79D2332104B383001DFC1A /* EListTVC.swift */,
 				0A79D2342104B383001DFC1A /* EListTVC.xib */,
+				0ADE130E21121BF100C49374 /* CelebCVC.swift */,
+				0ADE130F21121BF100C49374 /* CelebCVC.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -171,6 +183,9 @@
 				0A84D8FE2108EB1700625ADF /* ChoseTeamTVC.xib */,
 				0ADE1308210E6E0C00C49374 /* UserTurnView.xib */,
 				0ADE130A210E6E2800C49374 /* UserTurnView.swift */,
+				0ADE131221121CED00C49374 /* UserTurnViewCV.swift */,
+				0ADE13142112376E00C49374 /* AnsCountView.xib */,
+				0ADE13162112378000C49374 /* AnsCountView.swift */,
 			);
 			path = Subviews;
 			sourceTree = "<group>";
@@ -329,7 +344,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				0A79D24021062CAD001DFC1A /* AddCelebView.xib in Resources */,
+				0ADE131121121BF100C49374 /* CelebCVC.xib in Resources */,
 				0AB46EC921026EC50092BFE1 /* Main.storyboard in Resources */,
+				0ADE13152112376E00C49374 /* AnsCountView.xib in Resources */,
 				0AB46EC021026EC50092BFE1 /* GameScene.sks in Resources */,
 				0AB46ECB21026ED10092BFE1 /* Assets.xcassets in Resources */,
 				0ADE1309210E6E0C00C49374 /* UserTurnView.xib in Resources */,
@@ -393,6 +410,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0ADE131021121BF100C49374 /* CelebCVC.swift in Sources */,
 				0ADE130B210E6E2900C49374 /* UserTurnView.swift in Sources */,
 				0AB46EDF210346290092BFE1 /* UtilityHelper.swift in Sources */,
 				0A79D22F2104754B001DFC1A /* SettingsDataHelper.swift in Sources */,
@@ -409,8 +427,10 @@
 				0AB46ED721033FC60092BFE1 /* CoreDataModel.xcdatamodeld in Sources */,
 				0AB46EE421038FCC0092BFE1 /* TeamDataHelper.swift in Sources */,
 				0A79D2352104B383001DFC1A /* EListTVC.swift in Sources */,
+				0ADE13172112378000C49374 /* AnsCountView.swift in Sources */,
 				0AB46EBE21026EC50092BFE1 /* AppDelegate.swift in Sources */,
 				0A79D22B21046736001DFC1A /* PageRedirectHelper.swift in Sources */,
+				0ADE131321121CED00C49374 /* UserTurnViewCV.swift in Sources */,
 				0A84D8FC2108E6FF00625ADF /* Constants.swift in Sources */,
 				0A79D23E21062C81001DFC1A /* AddCelebVIew.swift in Sources */,
 				0A79D22921045669001DFC1A /* SettingsVC.swift in Sources */,

@@ -326,7 +326,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="DP5-Dm-F9T">
-                                <rect key="frame" x="19" y="80" width="337.5" height="528.5"/>
+                                <rect key="frame" x="19" y="69" width="337.5" height="549.5"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2CC-OX-O6s">
                                         <rect key="frame" x="0.0" y="0.0" width="337.5" height="39"/>
@@ -348,16 +348,29 @@
                                         <rect key="frame" x="0.0" y="89" width="337.5" height="400.5"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </tableView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fm7-fF-pTO">
-                                        <rect key="frame" x="0.0" y="489.5" width="337.5" height="39"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                        <state key="normal" title="Ready ? lets play !">
-                                            <color key="titleColor" red="1" green="1" blue="1" alpha="0.90000000000000002" colorSpace="calibratedRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="letsPlay:" destination="Vp3-cc-J7T" eventType="touchUpInside" id="fts-Ef-ZNR"/>
-                                        </connections>
-                                    </button>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rCI-gi-2mz">
+                                        <rect key="frame" x="0.0" y="489.5" width="337.5" height="60"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fm7-fF-pTO">
+                                                <rect key="frame" x="0.0" y="0.0" width="337.5" height="60"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                                <state key="normal" title="Ready ? lets play !">
+                                                    <color key="titleColor" red="1" green="1" blue="1" alpha="0.90000000000000002" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="letsPlay:" destination="Vp3-cc-J7T" eventType="touchUpInside" id="fts-Ef-ZNR"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="JT5-wo-O6s"/>
+                                            <constraint firstItem="fm7-fF-pTO" firstAttribute="height" secondItem="rCI-gi-2mz" secondAttribute="height" id="Vzf-3x-mHX"/>
+                                            <constraint firstItem="fm7-fF-pTO" firstAttribute="centerY" secondItem="rCI-gi-2mz" secondAttribute="centerY" id="cAV-Kz-zT9"/>
+                                            <constraint firstItem="fm7-fF-pTO" firstAttribute="centerX" secondItem="rCI-gi-2mz" secondAttribute="centerX" id="gNn-He-JCb"/>
+                                            <constraint firstItem="fm7-fF-pTO" firstAttribute="width" secondItem="rCI-gi-2mz" secondAttribute="width" id="qbE-3R-t0r"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                             </stackView>
                         </subviews>

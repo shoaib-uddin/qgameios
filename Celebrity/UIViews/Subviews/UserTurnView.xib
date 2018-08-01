@@ -62,18 +62,23 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cek-b5-tYz">
                     <rect key="frame" x="-1" y="308.5" width="375.5" height="70"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9bv-nQ-ubp">
-                            <rect key="frame" x="-0.5" y="20.5" width="375.5" height="29"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <nil key="highlightedColor"/>
-                        </label>
+                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" alwaysBounceHorizontal="YES" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="nJR-Nf-fuj">
+                            <rect key="frame" x="-1" y="-0.5" width="376" height="70"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Tij-7Z-xJk">
+                                <size key="itemSize" width="50" height="50"/>
+                                <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            </collectionViewFlowLayout>
+                        </collectionView>
                     </subviews>
                     <color key="backgroundColor" white="0.33333333333333331" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstItem="9bv-nQ-ubp" firstAttribute="centerY" secondItem="cek-b5-tYz" secondAttribute="centerY" id="BBy-Kf-JhW"/>
-                        <constraint firstItem="9bv-nQ-ubp" firstAttribute="width" secondItem="cek-b5-tYz" secondAttribute="width" id="PmR-dT-J5a"/>
-                        <constraint firstItem="9bv-nQ-ubp" firstAttribute="centerX" secondItem="cek-b5-tYz" secondAttribute="centerX" id="i28-BG-IoL"/>
+                        <constraint firstItem="nJR-Nf-fuj" firstAttribute="centerY" secondItem="cek-b5-tYz" secondAttribute="centerY" id="OEC-Hs-Wou"/>
+                        <constraint firstItem="nJR-Nf-fuj" firstAttribute="height" secondItem="cek-b5-tYz" secondAttribute="height" id="SGW-HT-xdQ"/>
+                        <constraint firstItem="nJR-Nf-fuj" firstAttribute="width" secondItem="cek-b5-tYz" secondAttribute="width" id="T5m-sY-e9b"/>
+                        <constraint firstItem="nJR-Nf-fuj" firstAttribute="centerX" secondItem="cek-b5-tYz" secondAttribute="centerX" id="p3q-JT-K4w"/>
                         <constraint firstAttribute="height" constant="70" id="pFc-r3-Cds"/>
                     </constraints>
                 </view>
@@ -85,6 +90,9 @@
                 </imageView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IMN-9o-55A">
                     <rect key="frame" x="10" y="572" width="75" height="75"/>
+                    <connections>
+                        <action selector="wrongAnswer:" destination="iN0-l3-epB" eventType="touchUpInside" id="r2M-zn-zCL"/>
+                    </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FM7-I0-DJv">
                     <rect key="frame" x="90" y="542" width="25" height="25"/>
@@ -104,6 +112,9 @@
                 </imageView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bsR-OS-lhi">
                     <rect key="frame" x="290" y="572" width="75" height="75"/>
+                    <connections>
+                        <action selector="writeAnswer:" destination="iN0-l3-epB" eventType="touchUpInside" id="uc5-Zl-qED"/>
+                    </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="frS-xp-FCg">
                     <rect key="frame" x="260" y="542" width="25" height="25"/>
@@ -123,6 +134,9 @@
                 </imageView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hMS-ld-uby">
                     <rect key="frame" x="144" y="521" width="86.5" height="86"/>
+                    <connections>
+                        <action selector="skipAnswer:" destination="iN0-l3-epB" eventType="touchUpInside" id="dgu-9a-uCg"/>
+                    </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -164,10 +178,10 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <connections>
+                <outlet property="collectionView" destination="nJR-Nf-fuj" id="a0S-JU-Ljt"/>
                 <outlet property="imgPlusicon" destination="3Yc-s3-oMc" id="HeW-HV-282"/>
                 <outlet property="imgWriteicon" destination="h3A-QE-OqW" id="9pJ-7Z-qFB"/>
                 <outlet property="imgWrongicon" destination="k86-2K-aat" id="Ylh-zP-NQQ"/>
-                <outlet property="lblCelebname" destination="9bv-nQ-ubp" id="r0t-Jx-L4K"/>
                 <outlet property="lblTime" destination="ts1-JM-gOh" id="Nfx-6M-nMT"/>
                 <outlet property="lblUsername" destination="pbM-ib-oAR" id="DVr-Ws-27k"/>
                 <outlet property="lblWritecount" destination="frS-xp-FCg" id="8S6-UF-JFF"/>

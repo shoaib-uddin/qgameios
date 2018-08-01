@@ -10,15 +10,22 @@ import Foundation
 import UIKit
 import CoreData;
 
-class GameBoardVC: UIViewController, UserTurnViewDelegate {
+class GameBoardVC: UIViewController, UserTurnViewDelegate, AnsCountViewDelegate {
+    
+    
     
     
     @IBOutlet weak var parentVIew: UIView!
+    var users: [Users] = [Users]();
     var userTurnView: UserTurnView!;
+    var ansCountView: AnsCountView!;
+    
+    
     
     override func viewDidLoad() {
         //
-        addView("turn");
+        fetchallusers();
+        addView("turn", 0);
         
     }
     
@@ -29,9 +36,13 @@ class GameBoardVC: UIViewController, UserTurnViewDelegate {
         self.navigationController?.setNavigationBarHidden(true, animated: animated)
     }
     
+    func fetchallusers(){
+        users = UserDataHelper.getAllUsers() as! [Users];
+    }
     
     
-    func addView(_ v: String){
+    
+    func addView(_ v: String, _ index: Int){
         
         let w = self.parentVIew.frame.width;
         let h = self.parentVIew.frame.height;
@@ -46,7 +57,9 @@ class GameBoardVC: UIViewController, UserTurnViewDelegate {
                 self.userTurnView.tag = 80;
                 self.parentVIew.addSubview(self.userTurnView)
             }
+            self.userTurnView.setData(users[index])
             self.parentVIew.bringSubview(toFront: self.userTurnView);
+            
             
             break;
         default:
@@ -58,8 +71,32 @@ class GameBoardVC: UIViewController, UserTurnViewDelegate {
     
     
     // delegates
-    func SwitchPlayer(view: UserTurnView) {
+    func SwitchPlayer(view: UserTurnView, user: Users, write: [Celeb], wrong: [Celeb]) {
         //
+        
+        view.removeFromSuperview();
+        let w = self.parentVIew.frame.width;
+        let h = self.parentVIew.frame.height;
+        
+        if(self.ansCountView == nil){
+            self.ansCountView =  Bundle.main.loadNibNamed("AnsCountView", owner: self, options: nil)?[0] as! AnsCountView;
+            self.ansCountView.frame = CGRect(x: 0, y: 0, width: w, height: h);
+            self.ansCountView.delegate = self;
+            self.ansCountView.tag = 82;
+            self.parentVIew.addSubview(self.ansCountView)
+        }
+        self.ansCountView.setData(user: user, write: write, wrong: wrong)
+        self.parentVIew.bringSubview(toFront: self.ansCountView);
+        
+    }
+    
+    // delegate
+    func SwitchView(view: AnsCountView) {
+        //
+    }
+    
+    func addScoreView(write: [Celeb], wrong: [Celeb]){
+        
         
     }
     

@@ -22,3 +22,9 @@ extension UIView{
     
 }
 
+extension Array {
+    mutating func rearrange(from: Int, to: Int) {
+        insert(remove(at: from), at: to)
+    }
+}
+

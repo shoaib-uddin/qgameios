@@ -61,6 +61,7 @@ class UserDataHelper{
         let item = NSManagedObject(entity: entity!, insertInto: context) as! Users;
         item.setValue(name, forKey: "name");
         item.setValue(teamId, forKey: "teamId");
+        item.setValue(0, forKey: "counter");
         
         do{
             try context.save();
