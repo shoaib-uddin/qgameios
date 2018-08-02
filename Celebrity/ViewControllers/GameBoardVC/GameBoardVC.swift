@@ -19,13 +19,13 @@ class GameBoardVC: UIViewController, UserTurnViewDelegate, AnsCountViewDelegate 
     var users: [Users] = [Users]();
     var userTurnView: UserTurnView!;
     var ansCountView: AnsCountView!;
-    
+    var setIndex: Int = 0
     
     
     override func viewDidLoad() {
         //
         fetchallusers();
-        addView("turn", 0);
+        addView("turn", setIndex);
         
     }
     
@@ -37,6 +37,7 @@ class GameBoardVC: UIViewController, UserTurnViewDelegate, AnsCountViewDelegate 
     }
     
     func fetchallusers(){
+        UserDataHelper.setAllUsersCounterToZero();
         users = UserDataHelper.getAllUsers() as! [Users];
     }
     
@@ -58,7 +59,7 @@ class GameBoardVC: UIViewController, UserTurnViewDelegate, AnsCountViewDelegate 
                 self.parentVIew.addSubview(self.userTurnView)
             }
             self.userTurnView.setData(users[index])
-            self.parentVIew.bringSubview(toFront: self.userTurnView);
+            //self.parentVIew.bringSubview(toFront: self.userTurnView);
             
             
             break;
@@ -73,29 +74,41 @@ class GameBoardVC: UIViewController, UserTurnViewDelegate, AnsCountViewDelegate 
     // delegates
     func SwitchPlayer(view: UserTurnView, user: Users, write: [Celeb], wrong: [Celeb]) {
         //
-        
-        view.removeFromSuperview();
+
+        self.userTurnView.removeFromSuperview();
+        self.userTurnView = nil;
+//        //view.removeFromSuperview();
         let w = self.parentVIew.frame.width;
         let h = self.parentVIew.frame.height;
-        
+
         if(self.ansCountView == nil){
             self.ansCountView =  Bundle.main.loadNibNamed("AnsCountView", owner: self, options: nil)?[0] as! AnsCountView;
             self.ansCountView.frame = CGRect(x: 0, y: 0, width: w, height: h);
             self.ansCountView.delegate = self;
             self.ansCountView.tag = 82;
+         
             self.parentVIew.addSubview(self.ansCountView)
         }
         self.ansCountView.setData(user: user, write: write, wrong: wrong)
-        self.parentVIew.bringSubview(toFront: self.ansCountView);
+
+        //self.parentVIew.bringSubview(toFront: self.ansCountView);
         
     }
     
     // delegate
     func SwitchView(view: AnsCountView) {
         //
-    }
-    
-    func addScoreView(write: [Celeb], wrong: [Celeb]){
+        
+        self.ansCountView.removeFromSuperview();
+        self.ansCountView = nil
+        setIndex = setIndex + 1;
+        if(setIndex >= users.count){
+            print(view.iUser);
+        }else{
+            print(view.iUser);
+            addView("turn", setIndex);
+        }
+        
         
         
     }

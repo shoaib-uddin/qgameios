@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import SwiftIconFont
 
 @objc protocol AnsCountViewDelegate {
     func SwitchView(view : AnsCountView);
@@ -34,26 +35,37 @@ class AnsCountView: UIView{
         imgWriteicon.roundImageBorder(color: Colors.white, width: 5);
         imgWrongicon.backgroundColor = CSS.colorWithHexString(Colors.red);
         imgWrongicon.roundImageBorder(color: Colors.white, width: 5);
+        CSS.setFontImageVisualsMaterial(imgWrongicon, name: "close", color: Colors.white);
+        CSS.setFontImageVisualsMaterial(imgWriteicon, name: "done", color: Colors.white);
         
         wrongCollection.delegate = self;
         writeCollection.delegate = self;
         wrongCollection.dataSource = self;
         writeCollection.dataSource = self;
         
-        setCV(wrongCollection);
-        setCV(writeCollection);
+        wrongCollection.register(UINib(nibName: "CelebCVC", bundle: nil), forCellWithReuseIdentifier: "CelebCVC");
+        wrongCollection.delegate = self;
+        wrongCollection.dataSource = self;
+        wrongCollection.allowsMultipleSelection = false;
+        if #available(iOS 11.0, *) {
+            wrongCollection?.contentInsetAdjustmentBehavior = .always
+        }
+        
+        writeCollection.register(UINib(nibName: "CelebCVC", bundle: nil), forCellWithReuseIdentifier: "CelebCVC");
+        writeCollection.delegate = self;
+        writeCollection.dataSource = self;
+        writeCollection.allowsMultipleSelection = false;
+        if #available(iOS 11.0, *) {
+            writeCollection?.contentInsetAdjustmentBehavior = .always
+        }
+        
+        
+        
+        
         
     }
     
-    func setCV(_ collectionView: UICollectionView){
-        collectionView.register(UINib(nibName: "CelebCVC", bundle: nil), forCellWithReuseIdentifier: "CelebCVC");
-        collectionView.delegate = self;
-        collectionView.dataSource = self;
-        collectionView.allowsMultipleSelection = false;
-        if #available(iOS 11.0, *) {
-            collectionView.contentInsetAdjustmentBehavior = .always
-        }
-    }
+    
     
     func setData( user: Users, write : [Celeb] , wrong : [Celeb]){
         celebArrayRite = write;
@@ -63,6 +75,19 @@ class AnsCountView: UIView{
         self.writeCollection.reloadData();
     }
     
+    @IBAction func nextRound(_ sender: UIButton) {
+        
+        var intt = Int(self.iUser.counter);
+        intt = intt + celebArrayRite.count;
+        UserDataHelper.updateUser(iuser: self.iUser, count: intt);
+        print(intt);
+        
+        
+        delegate?.SwitchView(view: self);
+        
+    }
+    
+    
 }
 
 extension AnsCountView: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
@@ -71,8 +96,8 @@ extension AnsCountView: UICollectionViewDataSource, UICollectionViewDelegateFlow
         //
         collectionView.layoutIfNeeded();
         let width = collectionView.frame.width;
-        let height = collectionView.frame.height/5;
-        return CGSize(width: width, height: height);
+//        let height = collectionView.frame.height/5;
+        return CGSize(width: width, height: 43.5);
         
     }
     
@@ -116,7 +141,21 @@ extension AnsCountView: UICollectionViewDataSource, UICollectionViewDelegateFlow
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         //
+        let i = indexPath;
+        if(collectionView == self.writeCollection){
+            
+            celebArrayWrong.append(celebArrayRite[i.row]);
+            celebArrayRite.remove(at: i.row);
+            
+        }else{
+            
+            celebArrayRite.append(celebArrayWrong[i.row]);
+            celebArrayWrong.remove(at: i.row);
+            
+        }
         
+        self.writeCollection.reloadData();
+        self.wrongCollection.reloadData();
         
         
         

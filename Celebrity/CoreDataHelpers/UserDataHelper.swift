@@ -74,8 +74,22 @@ class UserDataHelper{
     }
     
     // update
-    class func updateUser(){
+    class func updateUser(iuser: Users, count: Int){
         // not required but may be in future
+        let appDelegate =  AppDelegate.getAppDelegate();
+        let context = appDelegate.persistentContainer.viewContext;
+        
+        iuser.counter = Int32(count)
+        
+        do{
+            try context.save();
+            context.processPendingChanges();
+            
+        } catch {
+            
+            print("Failed")
+        }
+        
     }
     
     // return
@@ -242,6 +256,30 @@ class UserDataHelper{
         
         return c;
     }
+    
+    class func setAllUsersCounterToZero(){
+        var c = [NSManagedObject]();
+        let appDelegate =  AppDelegate.getAppDelegate();
+        let context = appDelegate.persistentContainer.viewContext;
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: entityName)
+        request.returnsObjectsAsFaults = false
+        do {
+            let result = try context.fetch(request)
+            
+            
+            for user in result as! [Users] {
+                user.counter = Int32(0);
+            }
+            try context.save();
+            context.processPendingChanges();
+            
+        } catch {
+            
+            print("Failed")
+        }
+        
+    }
+    
     
     class func isUserUniqueInTeam(_ name: String, teamId: Int) -> Bool{
         
