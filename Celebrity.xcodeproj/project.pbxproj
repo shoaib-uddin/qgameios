@@ -47,6 +47,11 @@
 		0ADE13172112378000C49374 /* AnsCountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ADE13162112378000C49374 /* AnsCountView.swift */; };
 		0ADE13192112C55100C49374 /* TeamResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ADE13182112C55100C49374 /* TeamResultView.swift */; };
 		0ADE131B2112C59000C49374 /* TeamResultView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0ADE131A2112C59000C49374 /* TeamResultView.xib */; };
+		0ADE131D21136CF300C49374 /* TeamResultViewCV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ADE131C21136CF300C49374 /* TeamResultViewCV.swift */; };
+		0ADE132021136D2700C49374 /* ResultCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ADE131E21136D2700C49374 /* ResultCVC.swift */; };
+		0ADE132121136D2700C49374 /* ResultCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0ADE131F21136D2700C49374 /* ResultCVC.xib */; };
+		0ADE13242113731100C49374 /* UserTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ADE13222113731100C49374 /* UserTVC.swift */; };
+		0ADE13252113731100C49374 /* UserTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0ADE13232113731100C49374 /* UserTVC.xib */; };
 		32D37B3C09491C843A1BE3A8 /* Pods_Celebrity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D491A1CDBB844C38FECAB117 /* Pods_Celebrity.framework */; };
 /* End PBXBuildFile section */
 
@@ -94,6 +99,11 @@
 		0ADE13162112378000C49374 /* AnsCountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnsCountView.swift; sourceTree = "<group>"; };
 		0ADE13182112C55100C49374 /* TeamResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamResultView.swift; sourceTree = "<group>"; };
 		0ADE131A2112C59000C49374 /* TeamResultView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TeamResultView.xib; sourceTree = "<group>"; };
+		0ADE131C21136CF300C49374 /* TeamResultViewCV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamResultViewCV.swift; sourceTree = "<group>"; };
+		0ADE131E21136D2700C49374 /* ResultCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultCVC.swift; sourceTree = "<group>"; };
+		0ADE131F21136D2700C49374 /* ResultCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ResultCVC.xib; sourceTree = "<group>"; };
+		0ADE13222113731100C49374 /* UserTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTVC.swift; sourceTree = "<group>"; };
+		0ADE13232113731100C49374 /* UserTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserTVC.xib; sourceTree = "<group>"; };
 		76FD448058C6A83332B06706 /* Pods-Celebrity.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Celebrity.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Celebrity/Pods-Celebrity.debug.xcconfig"; sourceTree = "<group>"; };
 		D491A1CDBB844C38FECAB117 /* Pods_Celebrity.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Celebrity.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -172,6 +182,10 @@
 				0A79D2342104B383001DFC1A /* EListTVC.xib */,
 				0ADE130E21121BF100C49374 /* CelebCVC.swift */,
 				0ADE130F21121BF100C49374 /* CelebCVC.xib */,
+				0ADE131E21136D2700C49374 /* ResultCVC.swift */,
+				0ADE131F21136D2700C49374 /* ResultCVC.xib */,
+				0ADE13222113731100C49374 /* UserTVC.swift */,
+				0ADE13232113731100C49374 /* UserTVC.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -192,6 +206,7 @@
 				0ADE13162112378000C49374 /* AnsCountView.swift */,
 				0ADE131A2112C59000C49374 /* TeamResultView.xib */,
 				0ADE13182112C55100C49374 /* TeamResultView.swift */,
+				0ADE131C21136CF300C49374 /* TeamResultViewCV.swift */,
 			);
 			path = Subviews;
 			sourceTree = "<group>";
@@ -350,6 +365,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0A79D24021062CAD001DFC1A /* AddCelebView.xib in Resources */,
+				0ADE132121136D2700C49374 /* ResultCVC.xib in Resources */,
 				0ADE131121121BF100C49374 /* CelebCVC.xib in Resources */,
 				0AB46EC921026EC50092BFE1 /* Main.storyboard in Resources */,
 				0ADE13152112376E00C49374 /* AnsCountView.xib in Resources */,
@@ -359,6 +375,7 @@
 				0ADE1309210E6E0C00C49374 /* UserTurnView.xib in Resources */,
 				0A79D23A2104F1B8001DFC1A /* AddUserView.xib in Resources */,
 				0AB46ECE21026ED10092BFE1 /* LaunchScreen.storyboard in Resources */,
+				0ADE13252113731100C49374 /* UserTVC.xib in Resources */,
 				0AB46EC221026EC50092BFE1 /* Actions.sks in Resources */,
 				0A84D9002108EB1700625ADF /* ChoseTeamTVC.xib in Resources */,
 				0A79D2362104B383001DFC1A /* EListTVC.xib in Resources */,
@@ -427,6 +444,7 @@
 				0A79D227210450E3001DFC1A /* HomeVC.swift in Sources */,
 				0A79D2382104E1E9001DFC1A /* ElistVC.swift in Sources */,
 				0AB46EC621026EC50092BFE1 /* GameViewController.swift in Sources */,
+				0ADE13242113731100C49374 /* UserTVC.swift in Sources */,
 				0A84D8FF2108EB1700625ADF /* ChoseTeamTVC.swift in Sources */,
 				0A79D24221062F1D001DFC1A /* CelebDataHelper.swift in Sources */,
 				0ADE130D211103AE00C49374 /* ExtensionHelper.swift in Sources */,
@@ -434,6 +452,7 @@
 				0AB46ED721033FC60092BFE1 /* CoreDataModel.xcdatamodeld in Sources */,
 				0AB46EE421038FCC0092BFE1 /* TeamDataHelper.swift in Sources */,
 				0ADE13192112C55100C49374 /* TeamResultView.swift in Sources */,
+				0ADE132021136D2700C49374 /* ResultCVC.swift in Sources */,
 				0A79D2352104B383001DFC1A /* EListTVC.swift in Sources */,
 				0ADE13172112378000C49374 /* AnsCountView.swift in Sources */,
 				0AB46EBE21026EC50092BFE1 /* AppDelegate.swift in Sources */,
@@ -444,6 +463,7 @@
 				0A79D22921045669001DFC1A /* SettingsVC.swift in Sources */,
 				0A79D22D21047059001DFC1A /* CSSHelper.swift in Sources */,
 				0A79D23C2104F1CD001DFC1A /* AddUserView.swift in Sources */,
+				0ADE131D21136CF300C49374 /* TeamResultViewCV.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

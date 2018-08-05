@@ -239,13 +239,6 @@ class UserDataHelper{
             
             
             for data in result as! [NSManagedObject] {
-                
-//                var i = [
-//                    "name": data.value(forKey: "name") as! String,
-//                    "highscore": data.value(forKey: "highscore") as! Decimal,
-//                    "teamId": data.value(forKey: "teamId") as! Decimal
-//                    ] as [String : Any]
-//                print(i)
                 c.append(data);
             }
             
@@ -278,6 +271,44 @@ class UserDataHelper{
             print("Failed")
         }
         
+    }
+    
+    class func getUsersTeamwise(completion: @escaping (_ teams: [[Users]]) -> Void) {
+        //
+        var team1: [Users] = [Users]();
+        var team2: [Users] = [Users]();
+        var team3: [Users] = [Users]();
+        var team4: [Users] = [Users]();
+        
+        if let uss = getAllUsers() as? [Users]{
+            for each in uss{
+                
+                switch (Int(each.teamId)){
+                    case 1:
+                        team1.append(each);
+                        break;
+                    case 2:
+                        team2.append(each);
+                        break;
+                    case 3:
+                        team3.append(each);
+                        break;
+                    case 4:
+                        team4.append(each);
+                        break;
+                    default:
+                        break;
+                }
+                
+                
+            }
+        };
+        
+        completion([team1, team2, team3, team4]);
+    
+    
+    
+    
     }
     
     

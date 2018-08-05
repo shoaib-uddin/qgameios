@@ -9,11 +9,49 @@
 import Foundation
 import UIKit
 
+@objc protocol TeamResultViewDelegate {
+    func SwitchRound(view : TeamResultView);
+}
+
 class TeamResultView: UIView {
     //
     
+    @IBOutlet weak var collectionView: UICollectionView!
+    weak var delegate:TeamResultViewDelegate?;
+    var UserArray: [Users]!;
+    var teamCount = 4;
+    var teams: [[Users]] = [[Users]]();
+    
     override func awakeFromNib() {
         //
+        collectionView.register(UINib(nibName: "ResultCVC", bundle: nil), forCellWithReuseIdentifier: "ResultCVC");
+        collectionView.delegate = self;
+        collectionView.dataSource = self;
+        collectionView.allowsMultipleSelection = false;
+        if #available(iOS 11.0, *) {
+            collectionView?.contentInsetAdjustmentBehavior = .always
+        }
+        
+        
         
     }
+    
+    func setData(){
+        
+        var st = SettingsDataHelper.returnSettings() as! Settings;
+        self.teamCount = Int(st.teamCount)
+        
+        UserDataHelper.getUsersTeamwise { (teams) in
+            self.teams = teams;
+            self.collectionView.reloadData();
+        };
+        
+//        self.UserArray = users;
+        
+    }
+    
+    @IBAction func playAgain(_ sender: UIButton) {
+        delegate?.SwitchRound(view: self);
+    }
+    
 }

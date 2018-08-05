@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import CoreData;
 
-class GameBoardVC: UIViewController, UserTurnViewDelegate, AnsCountViewDelegate {
+class GameBoardVC: UIViewController, UserTurnViewDelegate, AnsCountViewDelegate, TeamResultViewDelegate {
     
     
     
@@ -19,6 +19,7 @@ class GameBoardVC: UIViewController, UserTurnViewDelegate, AnsCountViewDelegate 
     var users: [Users] = [Users]();
     var userTurnView: UserTurnView!;
     var ansCountView: AnsCountView!;
+    var teamResultView: TeamResultView!;
     var setIndex: Int = 0
     
     
@@ -26,6 +27,7 @@ class GameBoardVC: UIViewController, UserTurnViewDelegate, AnsCountViewDelegate 
         //
         fetchallusers();
         addView("turn", setIndex);
+//        addView("result", setIndex);
         
     }
     
@@ -63,6 +65,19 @@ class GameBoardVC: UIViewController, UserTurnViewDelegate, AnsCountViewDelegate 
             
             
             break;
+        case "result":
+            
+            if(self.teamResultView == nil){
+                self.teamResultView =  Bundle.main.loadNibNamed("TeamResultView", owner: self, options: nil)?[0] as! TeamResultView;
+                self.teamResultView.frame = CGRect(x: 0, y: 0, width: w, height: h);
+                self.teamResultView.delegate = self;
+                self.teamResultView.tag = 84;
+                self.parentVIew.addSubview(self.teamResultView)
+            }
+            self.teamResultView.setData();
+            
+            
+            
         default:
             break
         }
@@ -104,6 +119,7 @@ class GameBoardVC: UIViewController, UserTurnViewDelegate, AnsCountViewDelegate 
         setIndex = setIndex + 1;
         if(setIndex >= users.count){
             print(view.iUser);
+            addView("result", setIndex);
         }else{
             print(view.iUser);
             addView("turn", setIndex);
@@ -112,6 +128,15 @@ class GameBoardVC: UIViewController, UserTurnViewDelegate, AnsCountViewDelegate 
         
         
     }
+    
+    
+    //
+    func SwitchRound(view: TeamResultView) {
+        //
+        self.navigationController?.popViewController(animated: true);
+    }
+    
+    
     
     
 }

@@ -20,6 +20,16 @@ extension UIView{
         v.layer.borderWidth = width;
     }
     
+    func setBorder(color: String, radius: Int, width: Int){
+        self.layoutIfNeeded();
+        self.layer.cornerRadius = CGFloat(radius);
+        self.clipsToBounds = true;
+        self.layer.borderColor = CSS.colorWithHexString(color).cgColor;
+        self.layer.borderWidth = CGFloat(width);
+    }
+    
+    
+    
 }
 
 extension Array {

@@ -73,6 +73,7 @@ class UserTurnView: UIView{
         lblUsername.text = "\(user.name! ?? "")'s turn"
         celebArray = CelebDataHelper.getAllCelebsByUser(user) as! [Celeb];
         self.iuser = user;
+        startTImeOut()
 //        let rand = UtilityHelper.randomNumber(inRange: 0...(celebArray.count - 1))
 //        showACeleb(celebArray[rand], rand);
     }
@@ -88,10 +89,11 @@ class UserTurnView: UIView{
         
         self.lblTime.text = "\(UtilityHelper.secIntoFormat(p))";
         
-        if(p < 0){
+        if(p <= 0){
             
             timer.invalidate()
-            
+            invalidateAllAnswers()
+            //wrongAnswer(UIButton());
         }
         else{
             p = p - 1;
@@ -121,6 +123,17 @@ class UserTurnView: UIView{
         let i = returnVisibleIndexPath();
         celebArray.rearrange(from: i.row, to: (celebArray.count - 1) )
         collectionView.reloadData();
+        checkIfCelebsEnds()
+    }
+    
+    func invalidateAllAnswers(){
+        
+        for each in celebArray{
+            celebArrayWrong.append(each);
+        }
+        celebArray.removeAll();
+        collectionView.reloadData();
+        lblWrongcount.text = "\(celebArrayWrong.count)";
         checkIfCelebsEnds()
     }
     
