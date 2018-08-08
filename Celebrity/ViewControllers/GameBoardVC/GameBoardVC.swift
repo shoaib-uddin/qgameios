@@ -12,10 +12,11 @@ import CoreData;
 
 class GameBoardVC: UIViewController, UserTurnViewDelegate, AnsCountViewDelegate, TeamResultViewDelegate {
     
-    
-    
-    
-    @IBOutlet weak var parentVIew: UIView!
+    @IBOutlet weak var parentVIew: UIView!;
+    var settings: Settings!;
+    var roundCount = 1;
+    var t_celebrities: [Celeb] = [Celeb]();
+    var s_celebrities: [Celeb] = [Celeb]();
     var users: [Users] = [Users]();
     var userTurnView: UserTurnView!;
     var ansCountView: AnsCountView!;
@@ -25,9 +26,8 @@ class GameBoardVC: UIViewController, UserTurnViewDelegate, AnsCountViewDelegate,
     
     override func viewDidLoad() {
         //
-        fetchallusers();
+        fetchall();
         addView("turn", setIndex);
-//        addView("result", setIndex);
         
     }
     
@@ -38,9 +38,12 @@ class GameBoardVC: UIViewController, UserTurnViewDelegate, AnsCountViewDelegate,
         self.navigationController?.setNavigationBarHidden(true, animated: animated)
     }
     
-    func fetchallusers(){
+    func fetchall(){
         UserDataHelper.setAllUsersCounterToZero();
         users = UserDataHelper.getAllUsers() as! [Users];
+        settings = SettingsDataHelper.returnSettings() as! Settings;
+        t_celebrities = CelebDataHelper.getAllCelebs();
+        roundCount = Int(settings.roundCount);
     }
     
     
@@ -60,7 +63,13 @@ class GameBoardVC: UIViewController, UserTurnViewDelegate, AnsCountViewDelegate,
                 self.userTurnView.tag = 80;
                 self.parentVIew.addSubview(self.userTurnView)
             }
-            self.userTurnView.setData(users[index])
+            
+            if(index == 0){
+                self.userTurnView.setData(users[index], self.t_celebrities);
+            }else{
+                self.userTurnView.setData(users[index], self.s_celebrities);
+            }
+            
             //self.parentVIew.bringSubview(toFront: self.userTurnView);
             
             
@@ -87,9 +96,12 @@ class GameBoardVC: UIViewController, UserTurnViewDelegate, AnsCountViewDelegate,
     
     
     // delegates
-    func SwitchPlayer(view: UserTurnView, user: Users, write: [Celeb], wrong: [Celeb]) {
+    func SwitchPlayer(view: UserTurnView, user: Users, write: [Celeb], wrong: [Celeb], remain: [Celeb]) {
         //
-
+        print(remain.count);
+        s_celebrities.removeAll();
+        s_celebrities.append(contentsOf: remain);
+        
         self.userTurnView.removeFromSuperview();
         self.userTurnView = nil;
 //        //view.removeFromSuperview();
@@ -118,10 +130,8 @@ class GameBoardVC: UIViewController, UserTurnViewDelegate, AnsCountViewDelegate,
         self.ansCountView = nil
         setIndex = setIndex + 1;
         if(setIndex >= users.count){
-            print(view.iUser);
             addView("result", setIndex);
         }else{
-            print(view.iUser);
             addView("turn", setIndex);
         }
         

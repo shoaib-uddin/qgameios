@@ -11,7 +11,7 @@ import UIKit
 import CoreData
 
 @objc protocol UserTurnViewDelegate {
-    func SwitchPlayer(view : UserTurnView, user: Users, write: [Celeb], wrong: [Celeb]);
+    func SwitchPlayer(view : UserTurnView, user: Users, write: [Celeb], wrong: [Celeb], remain: [Celeb]);
 }
 
 class UserTurnView: UIView{
@@ -33,6 +33,7 @@ class UserTurnView: UIView{
     var celebArray: [Celeb] = [Celeb]();
     var celebArrayRite: [Celeb] = [Celeb]();
     var celebArrayWrong: [Celeb] = [Celeb]();
+    var celebArraySkip: [Celeb] = [Celeb]();
     var visibleCeleb: Celeb!;
     var tmr: Timer!;
     var iuser: Users!;
@@ -64,18 +65,16 @@ class UserTurnView: UIView{
             collectionView?.contentInsetAdjustmentBehavior = .always
         }
         
-        
-        
     }
     
-    func setData(_ user: Users){
+    func setData(_ user: Users, _ c: [Celeb]){
         
-        lblUsername.text = "\(user.name! ?? "")'s turn"
-        celebArray = CelebDataHelper.getAllCelebsByUser(user) as! [Celeb];
+        lblUsername.text = "\(user.name!)'s turn";
+        celebArray.removeAll()
+        celebArray.append(contentsOf: c);
         self.iuser = user;
         startTImeOut()
-//        let rand = UtilityHelper.randomNumber(inRange: 0...(celebArray.count - 1))
-//        showACeleb(celebArray[rand], rand);
+        
     }
     
     func startTImeOut(){
@@ -91,9 +90,9 @@ class UserTurnView: UIView{
         
         if(p <= 0){
             
-            timer.invalidate()
+            timer.invalidate();
             invalidateAllAnswers()
-            //wrongAnswer(UIButton());
+            
         }
         else{
             p = p - 1;
@@ -121,25 +120,20 @@ class UserTurnView: UIView{
     
     @IBAction func skipAnswer(_ sender: UIButton) {
         let i = returnVisibleIndexPath();
-        celebArray.rearrange(from: i.row, to: (celebArray.count - 1) )
+        celebArraySkip.append(celebArray[i.row]);
+        celebArray.remove(at: i.row);
         collectionView.reloadData();
         checkIfCelebsEnds()
     }
     
     func invalidateAllAnswers(){
         
-        for each in celebArray{
-            celebArrayWrong.append(each);
-        }
-        celebArray.removeAll();
-        collectionView.reloadData();
-        lblWrongcount.text = "\(celebArrayWrong.count)";
-        checkIfCelebsEnds()
+        delegate?.SwitchPlayer(view: self, user: iuser, write: celebArrayRite, wrong: celebArrayWrong, remain: celebArray + celebArraySkip + celebArrayWrong);
     }
     
     
     
-    func returnVisibleIndexPath() -> IndexPath{
+    func returnVisibleIndexPath() -> IndexPath {
         var visibleRect: CGRect = CGRect()
         visibleRect.origin = (collectionView?.contentOffset)!
         visibleRect.size = (collectionView?.bounds.size)!
@@ -150,7 +144,7 @@ class UserTurnView: UIView{
     
     func checkIfCelebsEnds(){
         if(celebArray.count <= 0){
-            delegate?.SwitchPlayer(view: self, user: iuser, write: celebArrayRite, wrong: celebArrayWrong);
+            delegate?.SwitchPlayer(view: self, user: iuser, write: celebArrayRite, wrong: celebArrayWrong, remain: celebArray + celebArraySkip + celebArrayWrong);
         }
     }
     

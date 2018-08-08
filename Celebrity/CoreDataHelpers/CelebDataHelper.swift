@@ -142,6 +142,21 @@ class CelebDataHelper{
         
     }
     
+    class func getAllCelebs() -> [Celeb]{
+        
+        var cel: [Celeb] = [Celeb]();
+        let users = UserDataHelper.getAllUsers() as! [Users];
+        for each in users {
+            
+            let cells =  self.getAllCelebsByUser(each) as! [Celeb];
+            cel.append(contentsOf: cells);
+        }
+        
+        return cel;
+        
+        
+    }
+    
     class func checkIfCelebCountExceed(userId: NSManagedObject) -> Bool{
         
         let r = userId as? Users;
@@ -167,29 +182,6 @@ class CelebDataHelper{
         
         return false;
         
-        
-        
-//        let appDelegate =  AppDelegate.getAppDelegate();
-//        let context = appDelegate.persistentContainer.viewContext;
-//        let request = NSFetchRequest<NSFetchRequestResult>(entityName: entityName);
-//        request.predicate = NSPredicate(format: "name = %@", name);
-//        request.returnsObjectsAsFaults = false;
-//        request.fetchLimit = 1
-//
-//        do {
-//
-//            let c = try context.count(for: request);
-//            if( c == 0){
-//                return false;
-//            }else{
-//                return true;
-//            }
-//
-//        } catch {
-//
-//            print("Failed")
-//            return false;
-//        }
         
         
     }

@@ -56,7 +56,7 @@ class UtilityHelper{
         formatter.unitsStyle = .positional
         
         let formattedString = formatter.string(from: TimeInterval(interval))!
-        print(formattedString)
+//        print(formattedString)
         return formattedString;
         
     }
