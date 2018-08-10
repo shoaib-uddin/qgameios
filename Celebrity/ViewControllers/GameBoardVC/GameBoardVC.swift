@@ -77,6 +77,10 @@ class GameBoardVC: UIViewController, UserTurnViewDelegate, AnsCountViewDelegate,
             break;
         case "result":
             
+            if(self.teamResultView != nil){
+                
+            }
+            
             if(self.teamResultView == nil){
                 self.teamResultView =  Bundle.main.loadNibNamed("TeamResultView", owner: self, options: nil)?[0] as! TeamResultView;
                 self.teamResultView.frame = CGRect(x: 0, y: 0, width: w, height: h);
@@ -104,8 +108,10 @@ class GameBoardVC: UIViewController, UserTurnViewDelegate, AnsCountViewDelegate,
         s_celebrities.append(contentsOf: remain);
         
         if(self.userTurnView != nil){
+            view.tmr.invalidate();
             self.userTurnView.removeFromSuperview();
             self.userTurnView = nil;
+            
         }
         
 //        //view.removeFromSuperview();
@@ -119,8 +125,9 @@ class GameBoardVC: UIViewController, UserTurnViewDelegate, AnsCountViewDelegate,
             self.ansCountView.tag = 82;
          
             self.parentVIew.addSubview(self.ansCountView)
+            self.ansCountView.setData(user: user, write: write, wrong: wrong)
         }
-        self.ansCountView.setData(user: user, write: write, wrong: wrong)
+        
 
         //self.parentVIew.bringSubview(toFront: self.ansCountView);
         

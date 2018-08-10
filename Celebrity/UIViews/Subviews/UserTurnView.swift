@@ -79,7 +79,7 @@ class UserTurnView: UIView{
     
     func startTImeOut(){
         
-        Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(self.loopCountdownCallback(_ :)), userInfo: nil, repeats: true);
+        self.tmr = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(self.loopCountdownCallback(_ :)), userInfo: nil, repeats: true);
         
     }
     
@@ -97,9 +97,7 @@ class UserTurnView: UIView{
         else{
             p = p - 1;
             self.lblTime.text = "\(UtilityHelper.secIntoFormat(p))";
-            if(p <= 0){
-                
-            }
+            
             
         }
     }
