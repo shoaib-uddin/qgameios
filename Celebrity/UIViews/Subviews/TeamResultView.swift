@@ -16,6 +16,7 @@ import UIKit
 class TeamResultView: UIView {
     //
     
+    @IBOutlet weak var lblRcount: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
     weak var delegate:TeamResultViewDelegate?;
     var UserArray: [Users]!;
@@ -36,11 +37,11 @@ class TeamResultView: UIView {
         
     }
     
-    func setData(){
+    func setData(_ rcount: Int){
         
         var st = SettingsDataHelper.returnSettings() as! Settings;
         self.teamCount = Int(st.teamCount)
-        
+        self.lblRcount.text = "Round \(rcount) Finished";
         UserDataHelper.getUsersTeamwise { (teams) in
             self.teams = teams;
             self.collectionView.reloadData();

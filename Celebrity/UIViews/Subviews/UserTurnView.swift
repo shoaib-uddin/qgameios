@@ -97,6 +97,10 @@ class UserTurnView: UIView{
         else{
             p = p - 1;
             self.lblTime.text = "\(UtilityHelper.secIntoFormat(p))";
+            if(p <= 0){
+                
+            }
+            
         }
     }
     
